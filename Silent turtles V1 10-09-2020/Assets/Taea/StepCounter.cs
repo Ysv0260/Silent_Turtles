@@ -10,7 +10,7 @@ namespace PedometerU.Tests {
 
     public class StepCounter : MonoBehaviour {
 
-        public Text stepText, distanceText;
+        public Text text;
         private Pedometer Pedometer;
 
        
@@ -24,8 +24,8 @@ namespace PedometerU.Tests {
 
         private void OnStep (int steps, double distance) {
             // Display the values // Distance in feet
-            stepText.text = steps.ToString();
-            distanceText.text = (distance * 3.28084).ToString("F2") + " ft";
+            text.text = steps.ToString();
+            //distanceText.text = (distance * 3.28084).ToString("F2") + " ft";
         }
 
         private void OnDisable () {
