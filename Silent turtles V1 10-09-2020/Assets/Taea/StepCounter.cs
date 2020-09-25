@@ -18,6 +18,7 @@ namespace PedometerU.Tests {
         private void Start () {
             // Create a new pedometer
             Pedometer = new Pedometer(OnStep);
+
             // Reset UI
             OnStep(0, 0);
         }
