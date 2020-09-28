@@ -7,7 +7,10 @@ public class BGrepeat : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb;
     private float width;
-    private float speed = -2f;
+
+    //these two need to be the same 
+    private float speed = -75f;         
+    private float repo = 75f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +32,7 @@ public class BGrepeat : MonoBehaviour
     }
 
     private void Reposition(){
-        Vector2 vector = new Vector2(width * 2f, 0);
+        Vector2 vector = new Vector2(width * repo, 0);
         transform.position = (Vector2)transform.position + vector;
     }
 }
