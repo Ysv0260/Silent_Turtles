@@ -21,5 +21,6 @@ public class MusicPlayerScript : MonoBehaviour
     public void updateVolume(float volume)
     {
         musicVolume = volume;
+        print("volume" + volume);
     }
 }
