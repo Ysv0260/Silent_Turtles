@@ -7,13 +7,6 @@ public class MusicPlayerScript : MonoBehaviour
     public AudioSource AudioSource;
     public float musicVolume = 1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //AudioSource.Play();
-    }
-
-    // Update is called once per frame
     void Update()
     {
         AudioSource.volume = musicVolume;
@@ -21,6 +14,21 @@ public class MusicPlayerScript : MonoBehaviour
     public void updateVolume(float volume)
     {
         musicVolume = volume;
-        print("volume" + volume);
+        if (volume <= 0.1f)
+        {
+            print("volume is at low = " + volume);
+        }
+        else if (volume <= 0.5f)
+        {
+            print("volume is at medium = " + volume);
+        }
+        else if (volume <= 1)
+        {
+            print("volume is at high = " + volume);
+        }
+        else
+        {
+            print("volume" + volume);
+        }
     }
 }
