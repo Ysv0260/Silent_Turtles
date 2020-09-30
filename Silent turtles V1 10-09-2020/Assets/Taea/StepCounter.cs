@@ -28,9 +28,11 @@ namespace PedometerU.Tests {
 
         private void OnStep (int steps, double distance) {
             // Display the values // Distance in feet
-            writeStepsMain(steps.ToString());
-            text.text = readingStepsMain()+steps.ToString();
+          /*  writeStepsMain(steps.ToString());
+            text.text = readingStepsMain()+steps.ToString();*/
             //distanceText.text = (distance * 3.28084).ToString("F2") + " ft";
+         
+            text.text = steps.ToString();
         }
 
         private void OnDisable () {
@@ -39,7 +41,7 @@ namespace PedometerU.Tests {
             Pedometer = null;
         }
 
-
+/*
         private void writeStepsMain(String steps)
         {
             StreamWriter sw = new StreamWriter(path + "steps.txt");
@@ -70,6 +72,6 @@ namespace PedometerU.Tests {
             {
                 Console.WriteLine("Executing finally block.");
             }
-        }
+        }*/
     }
 }

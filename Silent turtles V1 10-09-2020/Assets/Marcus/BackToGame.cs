@@ -8,5 +8,7 @@ public class BackToGame : MonoBehaviour
     public void BackButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        print("Back button worked!");
     }
+
 }
