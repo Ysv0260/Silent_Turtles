@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 119658042}
   - component: {fileID: 119658041}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Settings text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -930,9 +930,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1025879296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777014f603882a64f8f87f14f3737907, type: 3}
+  m_Script: {fileID: 11500000, guid: d5a63cc0d7ef2954d9422d4af8d2b495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSource: {fileID: 2049950021}
+  musicVolume: 1
+  text: {fileID: 0}
 --- !u!1 &1034738048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1327,7 @@ GameObject:
   - component: {fileID: 1295047277}
   - component: {fileID: 1295047276}
   m_Layer: 5
-  m_Name: Text
+  m_Name: map text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1401,7 +1404,7 @@ GameObject:
   - component: {fileID: 1313723632}
   - component: {fileID: 1313723631}
   m_Layer: 0
-  m_Name: compass
+  m_Name: map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1830,9 +1833,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1871940982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acbb3abbc57e4a94dac2075e0444e34c, type: 3}
+  m_Script: {fileID: 11500000, guid: d5a63cc0d7ef2954d9422d4af8d2b495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSource: {fileID: 2049950021}
+  musicVolume: 1
+  text: {fileID: 0}
 --- !u!1 &1984924424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,8 +1851,9 @@ GameObject:
   - component: {fileID: 1984924427}
   - component: {fileID: 1984924426}
   - component: {fileID: 1984924428}
+  - component: {fileID: 1984924429}
   m_Layer: 5
-  m_Name: Text
+  m_Name: 'Steps text '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1919,11 +1926,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984924424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f5752f378f34804a2850c37523d8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 1984924426}
+--- !u!114 &1984924429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984924424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a63cc0d7ef2954d9422d4af8d2b495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSource: {fileID: 2049950021}
+  musicVolume: 1
   text: {fileID: 1984924426}
 --- !u!1 &2018623979
 GameObject:
@@ -1935,8 +1957,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2018623980}
   - component: {fileID: 2018623983}
-  - component: {fileID: 2018623982}
   - component: {fileID: 2018623981}
+  - component: {fileID: 2018623982}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1961,7 +1983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 495, y: 1142}
+  m_AnchoredPosition: {x: 500, y: 1059}
   m_SizeDelta: {x: 345.67847, y: 361.40845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2018623981
@@ -2008,7 +2030,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1025879298}
-        m_MethodName: GoToSetting
+        m_MethodName: NextSceneP2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2025,20 +2047,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018623979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2218,8 +2240,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 344, y: -956}
-  m_SizeDelta: {x: 308.06287, y: 270.60187}
+  m_AnchoredPosition: {x: 368, y: -939}
+  m_SizeDelta: {x: 308.06287, y: 294.57465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2111221301
 MonoBehaviour:
@@ -2265,7 +2287,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1871940984}
-        m_MethodName: NextScene
+        m_MethodName: NextSceneP1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
