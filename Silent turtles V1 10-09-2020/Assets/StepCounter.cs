@@ -25,11 +25,12 @@ namespace PedometerU.Tests {
 
         private void OnStep (int steps, double distance) {
             // Display the values // Distance in feet
-          /*  writeStepsMain(steps.ToString());
-            text.text = readingStepsMain()+steps.ToString();*/
             //distanceText.text = (distance * 3.28084).ToString("F2") + " ft";
-         
-            text.text = steps.ToString();
+
+            String stepdata = PlayerPrefs.GetString("Steps_data", "0");
+
+
+            text.text = steps.ToString() + "   " + stepdata;
         }
 
         private void OnDisable () {
@@ -38,37 +39,10 @@ namespace PedometerU.Tests {
             Pedometer = null;
         }
 
-/*
-        private void writeStepsMain(String steps)
+        private void OnDestroy()
         {
-            StreamWriter sw = new StreamWriter(path + "steps.txt");
-            sw.Flush();
-            sw.WriteLine(steps);
-            
+            PlayerPrefs.SetString("Steps_data", steps);
         }
 
-        private string readingStepsMain()
-        {
-            
-            path += @"steps.txt";
-
-            try
-            {
-                StreamReader sr = new StreamReader(path);
-                steps = sr.ReadLine();
-                sr.Close();
-
-                return steps;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("execption:" + e.Message);
-                return null;
-            }
-            finally
-            {
-                Console.WriteLine("Executing finally block.");
-            }
-        }*/
     }
 }
