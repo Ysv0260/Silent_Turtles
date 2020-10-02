@@ -11,16 +11,19 @@ namespace PedometerU.Tests {
 
     public class StepCounter : MonoBehaviour {
 
-        public Text text;
+        public Text stepstext;
+        public Text datatext;
         private Pedometer Pedometer;
         private string path = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
-        String steps;
+        public String steps;
 
         private void Start () {
             // Create a new pedometer
             Pedometer = new Pedometer(OnStep);
             // Reset UI
             OnStep(0, 0);
+
+            
         }
 
         private void OnStep (int steps, double distance) {
@@ -29,11 +32,24 @@ namespace PedometerU.Tests {
 
             String stepdata = PlayerPrefs.GetString("Steps_data", "0");
 
+            if (stepdata == null)
+            {
+                datatext.text = "NO DATA FOUND";
+                print("NO DATA FOUND");
+            }
+            else
+            {
+                datatext.text = stepdata;
+                print(stepdata);
+            }
 
-            text.text = steps.ToString() + "   " + stepdata;
+            
+
+            stepstext.text = steps.ToString();
         }
 
         private void OnDisable () {
+            print("steps OnDisable " + steps.ToString());
             // Release the pedometer
             Pedometer.Dispose();
             Pedometer = null;
@@ -41,8 +57,19 @@ namespace PedometerU.Tests {
 
         private void OnDestroy()
         {
-            PlayerPrefs.SetString("Steps_data", steps);
+            print("steps OnDestroy " + steps.ToString());
+            String datastepsSave = steps;
+
+            print(steps);
+            steps = "REEE";
+            print(steps);
+            print(datastepsSave);
+
+
+
+            PlayerPrefs.SetString("Steps_data", datastepsSave);
         }
+
 
     }
 }

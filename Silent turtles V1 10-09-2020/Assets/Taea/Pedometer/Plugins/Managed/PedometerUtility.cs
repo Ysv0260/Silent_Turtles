@@ -24,8 +24,8 @@ namespace PedometerU {
         }
         
         void Awake () {
-            DontDestroyOnLoad(this.gameObject);
-            DontDestroyOnLoad(this);
+           // DontDestroyOnLoad(this.gameObject);
+           // DontDestroyOnLoad(this);
         }
 
         void Update () {
