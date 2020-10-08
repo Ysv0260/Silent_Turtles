@@ -81,4 +81,14 @@ public class Scriptstotal : MonoBehaviour
         }
     }
 
+    public void chechdate()
+    {
+
+        string day = System.DateTime.Now.ToString("dd");
+        string Week = System.DateTime.Now.ToString("dd");
+        string Month = System.DateTime.Now.ToString("MM");
+
+        print(day + Week + Month);
+    }
+
 }   
