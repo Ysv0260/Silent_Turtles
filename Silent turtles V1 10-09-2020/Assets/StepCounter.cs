@@ -14,61 +14,45 @@ namespace PedometerU.Tests {
         public Text stepstext;
         public Text datatext;
         private Pedometer Pedometer;
-        private string path = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
-        public String steps;
 
         private void Start () {
             // Create a new pedometer
             Pedometer = new Pedometer(OnStep);
             // Reset UI
-            OnStep(0, 0);
-
-            
-        }
-
-        private void OnStep (int steps, double distance) {
-            // Display the values // Distance in feet
-            //distanceText.text = (distance * 3.28084).ToString("F2") + " ft";
-
-            String stepdata = PlayerPrefs.GetString("Steps_data", "0");
-
-            if (stepdata == null)
+            if (PlayerPrefs.GetInt("Steps", 0) != 0)
             {
-                datatext.text = "NO DATA FOUND";
-                print("NO DATA FOUND");
+                OnStep(PlayerPrefs.GetInt("Steps", 0), 0);
             }
             else
             {
-                datatext.text = stepdata;
-                print(stepdata);
+                OnStep(0, 0);
             }
 
             
-
-            stepstext.text = steps.ToString();
         }
 
+        private void OnStep(int steps, double distance)
+        {
+            // Display the values // Distance in feet
+            //distanceText.text = (distance * 3.28084).ToString("F2") + " ft";            
+            stepstext.text = steps.ToString();
+            datatext.text = PlayerPrefs.GetInt("Steps", 0).ToString();
+            PlayerPrefs.SetInt("Steps", steps);
+            PlayerPrefs.SetInt("StepsSave", steps);
+        }
+           
+
         private void OnDisable () {
-            print("steps OnDisable " + steps.ToString());
+
+
+            PlayerPrefs.SetInt("Steps", 0);
             // Release the pedometer
             Pedometer.Dispose();
             Pedometer = null;
         }
-
-        private void OnDestroy()
-        {
-            print("steps OnDestroy " + steps.ToString());
-            String datastepsSave = steps;
-
-            print(steps);
-            steps = "REEE";
-            print(steps);
-            print(datastepsSave);
+       
 
 
-
-            PlayerPrefs.SetString("Steps_data", datastepsSave);
-        }
 
 
     }

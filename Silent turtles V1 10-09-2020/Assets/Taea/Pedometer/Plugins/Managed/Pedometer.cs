@@ -67,7 +67,14 @@ namespace PedometerU {
 
         private void OnStep (int steps, double distance) {
             // Set initials and increment update count
+
+
             initialSteps = updateCount++ == 0 ? steps : initialSteps;
+
+
+            //Testing save feture 
+            //initialSteps = PlayerPrefs.GetInt("Steps", 0);
+
             initialDistance = steps == initialSteps ? distance : initialDistance;
             // If this is not the first step, then invoke the callback
             if (steps != initialSteps)
