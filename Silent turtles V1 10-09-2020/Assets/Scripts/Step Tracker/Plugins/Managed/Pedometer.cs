@@ -70,7 +70,6 @@ namespace PedometerU {
         private void OnStep (int steps, double distance) {
             // Set initials and increment update count
 
-
             initialSteps = updateCount++ == 0 ? steps : initialSteps;
 
 
