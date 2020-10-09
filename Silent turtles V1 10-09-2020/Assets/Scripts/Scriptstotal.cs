@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Scriptstotal : MonoBehaviour
 {
 
-    //scene change 
+    //scene change
 
     public void NextSceneP1()
     {
@@ -22,9 +22,9 @@ public class Scriptstotal : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         print("Backwards one scenes");
-        
+
     }
-   
+
     public void BackSceneP2()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
@@ -57,9 +57,9 @@ public class Scriptstotal : MonoBehaviour
     public AudioSource AudioSource;
     public float musicVolume = 1f;
 
- 
 
-    
+
+
     public void UpdateVolume(float volume)
     {
         AudioListener.volume = volume;
@@ -81,6 +81,6 @@ public class Scriptstotal : MonoBehaviour
         }
     }
 
-   
 
-}   
+
+}
