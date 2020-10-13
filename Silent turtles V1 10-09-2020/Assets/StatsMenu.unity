@@ -133,7 +133,11 @@ GameObject:
   - component: {fileID: 174563224}
   - component: {fileID: 174563223}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Steps_This_Month
+=======
+  m_Name: Steps_yesterday
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,7 +215,11 @@ GameObject:
   - component: {fileID: 274369040}
   - component: {fileID: 274369039}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Reset Steps
+=======
+  m_Name: Steps_week
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +353,11 @@ GameObject:
   - component: {fileID: 488364678}
   - component: {fileID: 488364677}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Steps Total
+=======
+  m_Name: StepTotal
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +433,11 @@ GameObject:
   - component: {fileID: 544942734}
   - component: {fileID: 544942733}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Steps_Total
+=======
+  m_Name: Steps_total
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,7 +648,11 @@ GameObject:
   - component: {fileID: 593469302}
   - component: {fileID: 593469301}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Back One Month
+=======
+  m_Name: StepMonthText (TMP)
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -925,7 +945,11 @@ GameObject:
   - component: {fileID: 675423254}
   - component: {fileID: 675423253}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Steps_Total_title
+=======
+  m_Name: StepTotalText (TMP)
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1058,7 +1082,11 @@ GameObject:
   - component: {fileID: 705121534}
   - component: {fileID: 705121533}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Steps Month
+=======
+  m_Name: StepThisMonth
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1240,11 @@ GameObject:
   - component: {fileID: 842749826}
   - component: {fileID: 842749825}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Steps_Yesterday_Title
+=======
+  m_Name: StepYesterdayText (TMP)
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1893,7 +1925,11 @@ GameObject:
   - component: {fileID: 1106317994}
   - component: {fileID: 1106317993}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Steps_This_Month_Title
+=======
+  m_Name: StepWeekText (TMP)
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2867,7 +2903,11 @@ GameObject:
   - component: {fileID: 1755861704}
   - component: {fileID: 1755861703}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Steps_last_Month
+=======
+  m_Name: Steps_month
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2945,7 +2985,11 @@ GameObject:
   - component: {fileID: 1796869879}
   - component: {fileID: 1796869878}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Back Text
+=======
+  m_Name: BackText
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
