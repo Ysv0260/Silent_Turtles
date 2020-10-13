@@ -14,6 +14,7 @@ public class StatsText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
         Today.text = "" + PlayerPrefs.GetInt("StepsToday", 0);
         Yesterday.text = "" + PlayerPrefs.GetInt("stepsYesterday", 0);
         ThisMonth.text = "" + PlayerPrefs.GetInt("StepsThisMonth", 0);

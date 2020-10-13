@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResetSteps : MonoBehaviour
 {
    
-
-
+    private int Visable = 0;
 
     public void Resetsteps()
     {
@@ -15,8 +15,13 @@ public class ResetSteps : MonoBehaviour
         PlayerPrefs.SetInt("StepsThisMonth", 0);
         PlayerPrefs.SetInt("StepsLastMonth", 0);
         PlayerPrefs.SetInt("StepsTotal", 0);
-        PlayerPrefs.SetInt("PlayerSteps", 0);
+        PlayerPrefs.SetInt("StepsCurrency", 0);
         print(System.DateTime.Now.ToString("dd/MM/yy"));
+    }
+
+    public void DevButton()
+    {
+        Visable = 1;
     }
 
     /*
@@ -26,7 +31,7 @@ public class ResetSteps : MonoBehaviour
     PlayerPrefs.SetString("Today", day);
     PlayerPrefs.SetString("Month", Month);
     */
-    
+
     public void BackOneMonth()
     {
         //Change the date to somthing that isnt this month 

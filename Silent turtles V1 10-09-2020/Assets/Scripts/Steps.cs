@@ -7,11 +7,8 @@
 *   https://github.com/olokobayusuf/Pedometer-API
 */
 
-namespace PedometerU.Tests {
-    using System;
-    using System.IO;
-    using System.Net.Http.Headers;
-    using System.Threading;
+namespace PedometerU.Tests
+{
     using UnityEngine;
     using UnityEngine.UI;
 
@@ -19,52 +16,42 @@ namespace PedometerU.Tests {
 
         private Pedometer Pedometer;
         public Text Mainsteps;
+      
+
 
         private void Start () {
-
-           
-            
-
             // Create a new pedometer
             Pedometer = new Pedometer(OnStep);
             // Reset UI
             OnStep(0, 0);
-
-            
-
-
-
-           
-
         }
 
         private void OnStep(int steps, double distance)
         {
-            // Display the values // Distance in feet
-            //distanceText.text = (distance * 3.28084).ToString("F2") + " ft";      
+            // Display the values // Distance in Meters to the 2 decimals
+            // distanceText.text = (distance).ToString("F2") + " Meter/s";      
 
-            
+            //This is the math outputs the steps to the game 
+            int textout = PlayerPrefs.GetInt("StepsCurrency",0) + steps;
+            Mainsteps.text = textout + "";
+            PlayerPrefs.SetInt("StepsForCurrency", steps);
 
-            Mainsteps.text = steps +"";
-
-           
             //Take the steps and place them within a player prefs
-            PlayerPrefs.SetInt("Steps", steps);
+            int textoutv2 = PlayerPrefs.GetInt("StepsToday", 0) + steps;
+            PlayerPrefs.SetInt("Steps", textoutv2);
 
-
-           
-
-            
-            // Testing to make sure stats are working :-) 
-            Output(steps);
             // Check the date and move around the steps to right placement
             Chechdate();
 
 
+            // Testing to make sure stats are working :-) 
+            //Debuging(steps);
+        
+
+
         }
 
-
-        private void Output(int steps)
+        private void Debuging(int steps)
         {
             //Steps coming from Main game
             Debug.Log("Steps From main game:  " + steps);
@@ -79,32 +66,56 @@ namespace PedometerU.Tests {
             int TotalStep = PlayerPrefs.GetInt("StepsTotal", 0) + steps;
             Debug.Log("Steps saved + steps V2:   " + TotalStep);
 
+            Debug.Log("This is the day now:  " + System.DateTime.Now.ToString("dd"));
+            Debug.Log("This is the day saved:  " + PlayerPrefs.GetString("Today", "can find"));
+            Debug.Log("This is the Month now:  " + System.DateTime.Now.ToString("MM"));
+            Debug.Log("This is the Month saved:  " + PlayerPrefs.GetString("Month", "can find"));
+
         }
 
         private void Save(int steps)
         {
-            int TodayStep = PlayerPrefs.GetInt("StepsToday", 0) + steps;
-            int MonthStep = PlayerPrefs.GetInt("StepsThisMonth", 0) + steps;
-            int TotalStep = PlayerPrefs.GetInt("StepsTotal", 0) + steps;
+           
+            Debug.LogWarning("This is what is in Currency before: " + PlayerPrefs.GetInt("StepsCurrency", 0));
+            Debug.LogWarning("This is what is in Total before: " + PlayerPrefs.GetInt("StepsTotal", 0));
 
+            int currency = PlayerPrefs.GetInt("StepsCurrency", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
+            int total = PlayerPrefs.GetInt("StepsTotal", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
 
-            PlayerPrefs.SetInt("StepsToday", TodayStep);
-            PlayerPrefs.SetInt("StepsThisMonth", MonthStep);
-            PlayerPrefs.SetInt("StepsTotal", TotalStep);
+            PlayerPrefs.SetInt("StepsCurrency", currency);
+            PlayerPrefs.SetInt("StepsTotal", total);
+            
+            Debug.LogWarning("This is what is in Currency after: " + PlayerPrefs.GetInt("StepsCurrency", 0));
+            Debug.LogWarning("This is what is in Total after: " + PlayerPrefs.GetInt("StepsTotal", 0));
+
+           
+            if (steps == 0)
+            {
+                PlayerPrefs.SetInt("StepsToday", steps);
+                PlayerPrefs.SetInt("StepsThisMonth", steps);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("StepsToday", steps);
+                PlayerPrefs.SetInt("StepsThisMonth", steps);
+            }
+            
 
         }
 
         private void OnDisable () {
-
-            Save(PlayerPrefs.GetInt("Steps",0));
             // look at main game the saving of data is kinda causing he multiplcation of data here
             // you are saving it mutiple time each step maybe ?
-
-
+          
+            Save(PlayerPrefs.GetInt("Steps", 0));
+            
             // Release the pedometer
             Pedometer.Dispose();
             Pedometer = null;
         }
+
+       
+
 
 
         public void Chechdate()
@@ -135,11 +146,6 @@ namespace PedometerU.Tests {
             string day  = System.DateTime.Now.ToString("dd");
             string Month = System.DateTime.Now.ToString("MM");
             
-
-            Debug.Log("This is the day now:  "+ System.DateTime.Now.ToString("dd"));
-            Debug.Log("This is the day saved:  " + PlayerPrefs.GetString("Today", "can find"));
-            Debug.Log("This is the Month now:  " + System.DateTime.Now.ToString("MM"));
-            Debug.Log("This is the Month saved:  " + PlayerPrefs.GetString("Month", "can find"));
 
             if (PlayerPrefs.GetString("Today", null) != System.DateTime.Now.ToString("dd"))
             {
