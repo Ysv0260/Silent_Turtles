@@ -12,8 +12,9 @@ public class DailyQuest : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetFloat("Muti", 1f);
-        if (PlayerPrefs.GetString("Today", null) != System.DateTime.Now.ToString("dd"))
+        if (PlayerPrefs.GetString("TodayV2", null) != System.DateTime.Now.ToString("dd"))
         {
+            PlayerPrefs.SetString("TodayV2", System.DateTime.Now.ToString("dd"));
             PlayerPrefs.SetInt("Reward", 0);
         }
     }
@@ -37,7 +38,7 @@ public class DailyQuest : MonoBehaviour
             if (PlayerPrefs.GetInt("StepsToday", 0) >= 10000)
             {
                 Debug.Log("Inside 10000 IF");
-                Reward = 10000 + PlayerPrefs.GetInt("StepsCurrency", 0);
+                Reward = 5000 + PlayerPrefs.GetInt("StepsCurrency", 0);
                 PlayerPrefs.SetInt("StepsCurrency", Reward);
                 PlayerPrefs.SetInt("Reward", 3);
 
@@ -50,7 +51,7 @@ public class DailyQuest : MonoBehaviour
             if (PlayerPrefs.GetInt("StepsToday", 0) >= 5000)
             {
                 Debug.Log("Inside 5000 IF");
-                Reward = 5000 + PlayerPrefs.GetInt("StepsCurrency", 0);
+                Reward = 2500 + PlayerPrefs.GetInt("StepsCurrency", 0);
                 PlayerPrefs.SetInt("StepsCurrency", Reward);
                 PlayerPrefs.SetInt("Reward", 2);
 
@@ -63,7 +64,7 @@ public class DailyQuest : MonoBehaviour
             {
              
                 Debug.Log("Inside 1000 IF");
-                Reward = 1000 + PlayerPrefs.GetInt("StepsCurrency", 0);
+                Reward = 500 + PlayerPrefs.GetInt("StepsCurrency", 0);
                 PlayerPrefs.SetInt("StepsCurrency", Reward);
                 PlayerPrefs.SetInt("Reward", 1);
             }
