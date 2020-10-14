@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 488364676}
   - component: {fileID: 488364678}
   m_Layer: 5
+
   m_Name: Steps Total
   m_TagString: Untagged
   m_Icon: {fileID: 0}
