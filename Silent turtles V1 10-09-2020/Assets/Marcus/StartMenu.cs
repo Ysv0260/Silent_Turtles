@@ -14,9 +14,9 @@ public class StartMenu : MonoBehaviour
 
     public void Exit()
     {
-        //used for testing quit button works on unity 
+        //used for testing quit button works on unity
         //UnityEditor.EditorApplication.isPlaying = false;
-        
+
         Application.Quit();
         print("Exit Button worked");
     }

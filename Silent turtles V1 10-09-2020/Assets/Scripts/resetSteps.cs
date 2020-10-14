@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResetSteps : MonoBehaviour
 {
    
-
-
-
     public void Resetsteps()
     {
         PlayerPrefs.SetInt("StepsToday", 0);
@@ -15,18 +13,10 @@ public class ResetSteps : MonoBehaviour
         PlayerPrefs.SetInt("StepsThisMonth", 0);
         PlayerPrefs.SetInt("StepsLastMonth", 0);
         PlayerPrefs.SetInt("StepsTotal", 0);
-        PlayerPrefs.SetInt("PlayerSteps", 0);
+        PlayerPrefs.SetInt("StepsCurrency", 0);
         print(System.DateTime.Now.ToString("dd/MM/yy"));
     }
 
-    /*
-     * This is the PlayerPrefs containing the month and date infoamtion 
-    string day = System.DateTime.Now.ToString("dd");
-    string Month = System.DateTime.Now.ToString("MM");
-    PlayerPrefs.SetString("Today", day);
-    PlayerPrefs.SetString("Month", Month);
-    */
-    
     public void BackOneMonth()
     {
         //Change the date to somthing that isnt this month 
