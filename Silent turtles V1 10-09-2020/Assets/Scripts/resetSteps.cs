@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class ResetSteps : MonoBehaviour
 {
    
-    private int Visable = 0;
-
     public void Resetsteps()
     {
         PlayerPrefs.SetInt("StepsToday", 0);
@@ -18,19 +16,6 @@ public class ResetSteps : MonoBehaviour
         PlayerPrefs.SetInt("StepsCurrency", 0);
         print(System.DateTime.Now.ToString("dd/MM/yy"));
     }
-
-    public void DevButton()
-    {
-        Visable = 1;
-    }
-
-    /*
-     * This is the PlayerPrefs containing the month and date infoamtion 
-    string day = System.DateTime.Now.ToString("dd");
-    string Month = System.DateTime.Now.ToString("MM");
-    PlayerPrefs.SetString("Today", day);
-    PlayerPrefs.SetString("Month", Month);
-    */
 
     public void BackOneMonth()
     {

@@ -12,12 +12,24 @@ public class Scriptstotal : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         print("Forward one scene");
+        Debug.LogWarning("This is what is in Currency before: " + PlayerPrefs.GetInt("StepsCurrency", 0));
+        Debug.LogWarning("This is what is in Total before: " + PlayerPrefs.GetInt("StepsTotal", 0));
+
+        int currency = PlayerPrefs.GetInt("StepsCurrency", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
+        int total = PlayerPrefs.GetInt("StepsTotal", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
+
+        PlayerPrefs.SetInt("StepsCurrency", currency);
+        PlayerPrefs.SetInt("StepsTotal", total);
+
+        Debug.LogWarning("This is what is in Currency after: " + PlayerPrefs.GetInt("StepsCurrency", 0));
+        Debug.LogWarning("This is what is in Total after: " + PlayerPrefs.GetInt("StepsTotal", 0));
     }
     public void NextSceneP2()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         print("Forward two scene");
     }
+        
     public void BackSceneP1()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -29,6 +41,7 @@ public class Scriptstotal : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
         print("Backwards two scenes");
+       
     }
      public void Exit()
     {
@@ -81,6 +94,13 @@ public class Scriptstotal : MonoBehaviour
         }
     }
 
-  
-
+    public void ChangeStepsTodayV1()
+    {
+        PlayerPrefs.SetInt("Steps", 999);
+    }
+    
+    public void ChangeStepsTodayV2()
+    {
+        PlayerPrefs.SetInt("Steps", 4999);
+    }
 }
