@@ -27,41 +27,44 @@ public class Scriptstotal : MonoBehaviour
     //this method will run each new frame of the game
     void Update()
     {
-        Multi();
         Reward();
+        Multi();
         AutoStep();
+    }
+   
+    //charater currency saving
+    private void CharSave()
+    {
+        int currency = PlayerPrefs.GetInt("StepsCurrency", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
+        int total = PlayerPrefs.GetInt("StepsTotal", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
+        PlayerPrefs.SetInt("StepsCurrency", currency);
+        PlayerPrefs.SetInt("StepsTotal", total);
     }
 
     //scene change
 
-    public void NextSceneP1()
+
+    public void NextScene(int scene)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
         print("Forward one scene");
-        CharSave();
+        if (SceneManager.GetActiveScene().name == "mainscreen")
+        {
+            CharSave();
+        }
     }
-    public void NextSceneP2()
+    public void BackScene(int scene)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-        print("Forward two scene");
-    }
-        
-    public void BackSceneP1()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        print("Backwards one scenes");
-
-    }
-
-    public void BackSceneP2()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
-        print("Backwards two scenes");
-       
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - scene);
+        print("Forward one scene");
+        if (SceneManager.GetActiveScene().name == "mainscreen")
+        {
+            CharSave();
+        }
     }
 
     // Quit the application
-     public void Exit()
+    public void Exit()
     {
         Application.Quit();
     }
@@ -157,6 +160,10 @@ public class Scriptstotal : MonoBehaviour
     
 
 
+
+    //Adhay is going to do this
+
+
     //multipler for the players charater
 
     private void Multi()
@@ -171,16 +178,22 @@ public class Scriptstotal : MonoBehaviour
         //TODO
     }
 
-    //charater currency saving
-    private void CharSave()
+
+    //Animation Stuff
+
+    public GameObject Animation;
+    
+    public void setanimation()
     {
-        int currency = PlayerPrefs.GetInt("StepsCurrency", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
-        int total = PlayerPrefs.GetInt("StepsTotal", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
-        PlayerPrefs.SetInt("StepsCurrency", currency);
-        PlayerPrefs.SetInt("StepsTotal", total);
+        Animation.SetActive(false);
     }
 
+    
+    
+    
 
+
+    
     //Testing
 
     public void ChangeStepsTodayV1()
@@ -195,5 +208,15 @@ public class Scriptstotal : MonoBehaviour
         PlayerPrefs.SetInt("StepsCurrency", 4999);
         PlayerPrefs.SetInt("Steps", 4999);
         PlayerPrefs.SetInt("StepsToday", 4999);
+    }
+
+    public void ButtonPressR()
+    {
+        print("ButtonClicked right");
+    }
+
+    public void ButtonPressL()
+    {
+        print("ButtonClicked left");
     }
 }
