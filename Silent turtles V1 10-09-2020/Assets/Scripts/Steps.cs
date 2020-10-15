@@ -50,8 +50,6 @@ namespace PedometerU.Tests
 
             // Testing to make sure stats are working :-) 
             Debuging(steps);
-        
-
 
         }
 
