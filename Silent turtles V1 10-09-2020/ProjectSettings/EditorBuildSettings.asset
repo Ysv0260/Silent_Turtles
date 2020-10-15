@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/settingsScreen.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/ShopScreenUser.unity
+    guid: cb3167bb983b56d4ab5b2e30292faa74
+  - enabled: 1
+    path: Assets/ShopScreenPet.unity
+    guid: af69f563f6ab98f41a52afe36a92cb1d
+  - enabled: 1
+    path: Assets/Inventory.unity
+    guid: f1cde2e9e92579949ad7b2383c204cc8
   m_configObjects: {}
