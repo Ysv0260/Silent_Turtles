@@ -13,6 +13,7 @@ public class Scriptstotal : MonoBehaviour
     public float musicVolume = 1f;
     public Image Arrow;
     public TextMeshProUGUI RewardText;
+    public Image padlockItem;
 
     //this will run when the script gets loaded
     private void Start()
@@ -224,4 +225,17 @@ public class Scriptstotal : MonoBehaviour
     {
         print("ButtonClicked left");
     }
+
+    public void UnlockedAnimation()
+    {
+        //if (PlayerPrefs.GetInt("StepsCurrency", 0) == 1000)
+        //{
+        padlockItem.gameObject.SetActive(false);
+        //}
+        //else
+        //{
+        //    padlockItem.enabled = true;
+        //}
+    }
+
 }
