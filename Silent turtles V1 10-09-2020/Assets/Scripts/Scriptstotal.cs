@@ -43,11 +43,16 @@ public class Scriptstotal : MonoBehaviour
 
     //scene change
 
+    public void Statscreen()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: 1);
+        print("Forward from start scene");
+    }
 
     public void NextScene(int scene)
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
-        print("Forward one scene");
+        print("Forward " + scene + " scene");
         if (SceneManager.GetActiveScene().name == "mainscreen")
         {
             CharSave();
@@ -56,7 +61,7 @@ public class Scriptstotal : MonoBehaviour
     public void BackScene(int scene)
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - scene);
-        print("Forward one scene");
+        print("Forward " + scene + " scene");
         if (SceneManager.GetActiveScene().name == "mainscreen")
         {
             CharSave();

@@ -85,11 +85,7 @@ namespace PedometerU.Tests
             // Release the pedometer
             Pedometer.Dispose();
             Pedometer = null;
-        }
-
-       
-
-
+        }    
 
         public void Chechdate()
         {
@@ -133,14 +129,7 @@ namespace PedometerU.Tests
                 PlayerPrefs.SetInt("StepsLastMonth", PlayerPrefs.GetInt("StepsThisMonth", 0));
                 PlayerPrefs.SetInt("StepsThisMonth", 0);
                 PlayerPrefs.SetString("Month", Month);
-            }
-
-
-
-
-            
+            }           
         }
-
-
     }
 }
