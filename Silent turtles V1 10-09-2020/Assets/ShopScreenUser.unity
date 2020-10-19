@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 368004913}
   - component: {fileID: 368004912}
   m_Layer: 5
-  m_Name: MushroomImage
+  m_Name: ElfImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1706,8 +1706,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1925924641}
-        m_MethodName: ButtonPress
+      - m_Target: {fileID: 1925924642}
+        m_MethodName: KightCharater
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3451,6 +3451,7 @@ GameObject:
   - component: {fileID: 1925924638}
   - component: {fileID: 1925924637}
   - component: {fileID: 1925924641}
+  - component: {fileID: 1925924642}
   m_Layer: 5
   m_Name: ShopScreenCanvas
   m_TagString: Untagged
@@ -3558,7 +3559,24 @@ MonoBehaviour:
   musicVolume: 1
   Arrow: {fileID: 0}
   RewardText: {fileID: 0}
-  Animation: {fileID: 0}
+  Animation1: {fileID: 0}
+  Animation2: {fileID: 0}
+--- !u!114 &1925924642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925924636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fbb2e4585948940903413ba29dfe13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharaterCost: {fileID: 648083441}
+  CharaterLock: {fileID: 784585206}
+  CharaterActive: {fileID: 92329561}
+  elfactive: {fileID: 2109151833}
 --- !u!1 &1995839570
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,7 +3986,7 @@ GameObject:
   - component: {fileID: 2109151836}
   - component: {fileID: 2109151835}
   m_Layer: 5
-  m_Name: MushroomActive
+  m_Name: ElfActive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
