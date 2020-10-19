@@ -202,7 +202,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 71954600}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 849981863}
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &71954600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,9 +432,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 849981861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 199c67d5f1245f349a4c0b379ba80e0b, type: 3}
+  m_Script: {fileID: 11500000, guid: d5a63cc0d7ef2954d9422d4af8d2b495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSource: {fileID: 0}
+  musicVolume: 1
+  Arrow: {fileID: 0}
+  RewardText: {fileID: 0}
+  Animation: {fileID: 0}
 --- !u!1 &1795430252
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,12 +980,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 849981863}
-        m_MethodName: PlayGame
+        m_MethodName: Statscreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
