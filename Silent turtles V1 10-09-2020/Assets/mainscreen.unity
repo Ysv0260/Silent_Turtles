@@ -2243,6 +2243,7 @@ GameObject:
   - component: {fileID: 1170575615}
   - component: {fileID: 1170575614}
   - component: {fileID: 1170575616}
+  - component: {fileID: 1170575618}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2328,6 +2329,25 @@ RectTransform:
   m_AnchoredPosition: {x: 629, y: 1484}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.52358973, y: 0.47641024}
+--- !u!95 &1170575618
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170575613}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a46d5ce0a61531a4d9e2d3138550b086, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1232917176
 GameObject:
   m_ObjectHideFlags: 0
