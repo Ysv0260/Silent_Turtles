@@ -44,8 +44,6 @@ public class UnlockingPets : MonoBehaviour
          */
         //get the playerprefs int
 
-        if (PlayerPrefs)
-
         if (PlayerPrefs.GetInt("ActiveState", 1) == 1)
         {
             ActiveState1.SetActive(true);
@@ -250,8 +248,5 @@ public class UnlockingPets : MonoBehaviour
             PlayerPrefs.SetInt("ActiveState", 6);
             ActiveState6.SetActive(true);
         }
-        else if ()
-
     }
-
 }
