@@ -7,26 +7,17 @@ public class UnlockingPets : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject MushroomPadlock;
-    public bool MushroomPurchased;
-    
     public GameObject CatPadlock;
-    public bool CatPurchased;
-
     public GameObject WolfPadlock;
-    public bool WolfPurchased;
-
     public GameObject BearPadlock;
-    public bool BearPurchased;
-
     public GameObject GolemPadlock;
-    public bool GolemPurchased;
 
-    public GameObject ActiveState1;
-    public GameObject ActiveState2;
-    public GameObject ActiveState3;
-    public GameObject ActiveState4;
-    public GameObject ActiveState5;
-    public GameObject ActiveState6;
+    public GameObject ActiveStateFairy;
+    public GameObject ActiveStateMushroom;
+    public GameObject ActiveStateCat;
+    public GameObject ActiveStateWolf;
+    public GameObject ActiveStateBear;
+    public GameObject ActiveStateGolem;
 
     void Start()
     {
@@ -34,7 +25,6 @@ public class UnlockingPets : MonoBehaviour
         /*
          * Check what you have bought 
          * remove lock from ones you have bought
-         * check which one is active 
          * remove active from feriy 
          * put active on the right one 
          * 
@@ -44,42 +34,93 @@ public class UnlockingPets : MonoBehaviour
          */
         //get the playerprefs int
 
-        if (PlayerPrefs)
+        if (PlayerPrefs.GetInt("MushroomPadlock", 1) == 2)
+        {
+            GolemPadlock.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("CatPadlock", 1) == 2)
+        {
+            GolemPadlock.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("WolfPadlock", 1) == 2)
+        {
+            GolemPadlock.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("BearPadlock", 1) == 2)
+        {
+            GolemPadlock.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("GolemPadlock", 1) == 2)
+        {
+            GolemPadlock.SetActive(false);
+        }
+
+
+
 
         if (PlayerPrefs.GetInt("ActiveState", 1) == 1)
         {
-            ActiveState1.SetActive(true);
-            ActiveState2.SetActive(false);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(false);
+            ActiveStateFairy.SetActive(true);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(false);
         }
         else if(PlayerPrefs.GetInt("ActiveState", 1) == 2)
         {
-            ActiveState1.SetActive(false);
-            ActiveState2.SetActive(true);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(false);
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(true);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(false);
         }
+        else if (PlayerPrefs.GetInt("ActiveState", 1) == 3)
+        {
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(true);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(false);
+        }
+        else if (PlayerPrefs.GetInt("ActiveState", 1) == 4)
+        {
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(true);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(false);
+        }
+        else if (PlayerPrefs.GetInt("ActiveState", 1) == 5)
+        {
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(true);
+            ActiveStateGolem.SetActive(false);
+        }
+        else if (PlayerPrefs.GetInt("ActiveState", 1) == 6)
+        {
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(true);
+        }
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Testingactive(PlayerPrefs.GetInt("Activestate", 1));
-        if (PlayerPrefs.GetInt("Activestate", 1) == 6)
-        {
-            ActiveState1.SetActive(false);
-            ActiveState2.SetActive(false);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(true);
-        }
+        Testingactive(PlayerPrefs.GetInt("ActiveState", 1));
+
     }
 
     public void Unlock_Golem()
@@ -87,63 +128,56 @@ public class UnlockingPets : MonoBehaviour
         if (PlayerPrefs.GetInt("StepsCurrency", 0) >= 100000)
         {
             //GolemPet
-            GolemPurchased = true;
             GolemPadlock.SetActive(false);
             PlayerPrefs.SetInt("PetPurchased", 6);
-            PlayerPrefs.SetInt("Activestate",6);
-            PlayerPrefs.SetInt("GolemPadlock", 1);
+            PlayerPrefs.SetInt("ActiveState",6);
+            PlayerPrefs.SetInt("GolemPadlock", 2);
         }
     }
     
-
-    public void UnlockedAnimation()
+    public void Unlock_Bear()
     {
-
-
-        
         if (PlayerPrefs.GetInt("StepsCurrency", 0) >= 70000)
         {
-            //BearPet
-            BearPurchased = true;
-            BearPadlock.SetActive(true);
+            BearPadlock.SetActive(false);
+            PlayerPrefs.SetInt("PetPurchased", 5);
+            PlayerPrefs.SetInt("ActiveState", 5);
+            PlayerPrefs.SetInt("BearPadlock", 2);
         }
-        else if (PlayerPrefs.GetInt("StepsCurrency", 0) >= 50000)
-        {
-            //WolfPet
-            WolfPurchased = true;
-            WolfPadlock.SetActive(true);
-        }
-        else if (PlayerPrefs.GetInt("StepsCurrency", 0) >= 10000)
-        {
-            //CatPet
-            MushroomPadlock.SetActive(true);
-            CatPadlock.SetActive(true);
-            WolfPadlock.SetActive(false);
-            BearPadlock.SetActive(true);
-            GolemPadlock.SetActive(true);
-        }
-        else if (PlayerPrefs.GetInt("StepsCurrency", 0) >= 1000)
-        {
-            //MushroomPet
-            MushroomPadlock.SetActive(false);
-            CatPadlock.SetActive(true);
-            WolfPadlock.SetActive(true);
-            BearPadlock.SetActive(true);
-            GolemPadlock.SetActive(true);
-        }
-        else
-        {
-            //FairyPet
-            MushroomPadlock.SetActive(false);
-            CatPadlock.SetActive(true);
-            WolfPadlock.SetActive(true);
-            BearPadlock.SetActive(true);
-            GolemPadlock.SetActive(true);
-        }
-
     }
 
+    public void Unlock_Wolf()
+    {
+        if (PlayerPrefs.GetInt("StepsCurrency", 0) >= 50000)
+        {
+            WolfPadlock.SetActive(false);
+            PlayerPrefs.SetInt("PetPurchased", 4);
+            PlayerPrefs.SetInt("ActiveState", 4);
+            PlayerPrefs.SetInt("WolfPadlock", 2);
+        }
+    }
 
+    public void Unlock_Cat()
+    {
+        if (PlayerPrefs.GetInt("StepsCurrency", 0) >= 10000)
+        {
+            BearPadlock.SetActive(false);
+            PlayerPrefs.SetInt("PetPurchased", 3);
+            PlayerPrefs.SetInt("ActiveState", 3);
+            PlayerPrefs.SetInt("CatPadlock", 2);
+        }
+    }
+
+    public void Unlock_Mushroom()
+    {
+        if (PlayerPrefs.GetInt("StepsCurrency", 0) >= 70000)
+        {
+            MushroomPadlock.SetActive(false);
+            PlayerPrefs.SetInt("PetPurchased", 2);
+            PlayerPrefs.SetInt("ActiveState", 2);
+            PlayerPrefs.SetInt("MushroomPadlock", 2);
+        }
+    }
 
 
     public void Testingactive(int pet)
@@ -151,94 +185,63 @@ public class UnlockingPets : MonoBehaviour
         if(pet == 1)
         {
             //Default to fairy
-            ActiveState1.SetActive(true);
-            ActiveState2.SetActive(false);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(false);
+            ActiveStateFairy.SetActive(true);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(false);
             PlayerPrefs.SetInt("ActivePets", 1);
         }
         else if (pet == 2)
         {
-            ActiveState1.SetActive(false);
-            ActiveState2.SetActive(true);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(false);
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(true);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(false);
             PlayerPrefs.SetInt("ActivePets", 2);
         }
-    }
-
-    public void SetStateToActive()
-    {
-        if(GolemPadlock == false)
+        else if (pet == 3)
         {
-            //Golem Active state
-            ActiveState1.SetActive(false);
-            ActiveState2.SetActive(false);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(true);
-            PlayerPrefs.SetInt("ActivePets", 6);
-        }
-        else if (BearPadlock == false)
-        {
-            //Bear Active state
-            ActiveState1.SetActive(false);
-            ActiveState2.SetActive(false);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(true);
-            ActiveState6.SetActive(false);
-            PlayerPrefs.SetInt("ActivePets", 5);
-        }
-        else if (WolfPadlock == false)
-        {
-            //Wolf Active state
-            ActiveState1.SetActive(false);
-            ActiveState2.SetActive(false);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(true);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(false);
-            PlayerPrefs.SetInt("ActivePets", 4);
-        }
-        else if (CatPadlock == false)
-        {
-            //Cat Active state
-            ActiveState1.SetActive(false);
-            ActiveState2.SetActive(false);
-            ActiveState3.SetActive(true);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(false);
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(true);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(false);
             PlayerPrefs.SetInt("ActivePets", 3);
         }
-        else if(MushroomPadlock == false)
+        else if (pet == 4)
         {
-            //Mushroom Active state
-            ActiveState1.SetActive(false);
-            ActiveState2.SetActive(true);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(false);
-            PlayerPrefs.SetInt("ActivePets", 2);
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(true);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(false);
+            PlayerPrefs.SetInt("ActivePets", 4);
         }
-        
-        else
+        else if (pet == 5)
         {
-            //Default to fairy
-            ActiveState1.SetActive(true);
-            ActiveState2.SetActive(false);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(false);
-            PlayerPrefs.SetInt("ActivePets", 1);
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(true);
+            ActiveStateGolem.SetActive(false);
+            PlayerPrefs.SetInt("ActivePets", 5);
+        }
+        else if (pet == 6)
+        {
+            ActiveStateFairy.SetActive(false);
+            ActiveStateMushroom.SetActive(false);
+            ActiveStateCat.SetActive(false);
+            ActiveStateWolf.SetActive(false);
+            ActiveStateBear.SetActive(false);
+            ActiveStateGolem.SetActive(true);
+            PlayerPrefs.SetInt("ActivePets", 6);
         }
     }
 
@@ -248,9 +251,32 @@ public class UnlockingPets : MonoBehaviour
         {
             PlayerPrefs.SetInt("SetPet", 6);
             PlayerPrefs.SetInt("ActiveState", 6);
-            ActiveState6.SetActive(true);
+            ActiveStateGolem.SetActive(true);
         }
-        else if ()
+        else if (PlayerPrefs.GetInt("PetPurchased", 0) == 5)
+        {
+            PlayerPrefs.SetInt("SetPet", 5);
+            PlayerPrefs.SetInt("ActiveState", 5);
+            ActiveStateBear.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("PetPurchased", 0) == 4)
+        {
+            PlayerPrefs.SetInt("SetPet", 4);
+            PlayerPrefs.SetInt("ActiveState", 4);
+            ActiveStateWolf.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("PetPurchased", 0) == 3)
+        {
+            PlayerPrefs.SetInt("SetPet", 3);
+            PlayerPrefs.SetInt("ActiveState", 3);
+            ActiveStateCat.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("PetPurchased", 0) == 2)
+        {
+            PlayerPrefs.SetInt("SetPet", 2);
+            PlayerPrefs.SetInt("ActiveState", 2);
+            ActiveStateMushroom.SetActive(true);
+        }
 
     }
 

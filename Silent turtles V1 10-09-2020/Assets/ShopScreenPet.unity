@@ -3450,29 +3450,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1736586348}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1925924642}
-        m_MethodName: UnlockedAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1925924642}
-        m_MethodName: SetStateToActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1736586348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3883,21 +3861,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MushroomPadlock: {fileID: 1736586345}
-  MushroomPurchased: 0
   CatPadlock: {fileID: 1958233848}
-  CatPurchased: 0
   WolfPadlock: {fileID: 1902848766}
-  WolfPurchased: 0
   BearPadlock: {fileID: 1171969483}
-  BearPurchased: 0
   GolemPadlock: {fileID: 469856172}
-  GolemPurchased: 0
-  ActiveState1: {fileID: 609611003}
-  ActiveState2: {fileID: 623302874}
-  ActiveState3: {fileID: 559514677}
-  ActiveState4: {fileID: 1055107582}
-  ActiveState5: {fileID: 601184546}
-  ActiveState6: {fileID: 138747953}
+  ActiveStateFairy: {fileID: 609611003}
+  ActiveStateMushroom: {fileID: 623302874}
+  ActiveStateCat: {fileID: 559514677}
+  ActiveStateWolf: {fileID: 1055107582}
+  ActiveStateBear: {fileID: 601184546}
+  ActiveStateGolem: {fileID: 138747953}
 --- !u!1 &1930213888
 GameObject:
   m_ObjectHideFlags: 0
