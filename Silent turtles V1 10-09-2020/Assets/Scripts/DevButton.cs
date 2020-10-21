@@ -7,6 +7,9 @@ public class DevButton : MonoBehaviour
     public Button BackM;
     public Button BackD;
     public Button ResetSteps;
+    public Button Step999;
+    public Button Step4999;
+    public Button Step9999;
     public bool visablity;
 
     // Start is called before the first frame update
@@ -23,6 +26,9 @@ public class DevButton : MonoBehaviour
         BackM.gameObject.SetActive(visablity);
         BackD.gameObject.SetActive(visablity);
         ResetSteps.gameObject.SetActive(visablity);
+        Step999.gameObject.SetActive(visablity);
+        Step4999.gameObject.SetActive(visablity);
+        Step9999.gameObject.SetActive(visablity);
     }
 
     public void DevClick()
@@ -41,6 +47,22 @@ public class DevButton : MonoBehaviour
         PlayerPrefs.SetInt("StepsTotal", 0);
         PlayerPrefs.SetInt("StepsCurrency", 0);
         PlayerPrefs.SetInt("Reward", 0);
+    }
+
+    public void AddSteps999()
+    {
+        int add = PlayerPrefs.GetInt("StepsToday",0) + 999;
+        PlayerPrefs.SetInt("StepsToday", add);
+    }
+    public void AddSteps4999()
+    {
+        int add = PlayerPrefs.GetInt("StepsToday", 0) + 4999;
+        PlayerPrefs.SetInt("StepsToday", add);
+    }
+    public void AddSteps9999()
+    {
+        int add = PlayerPrefs.GetInt("StepsToday", 0) + 9999;
+        PlayerPrefs.SetInt("StepsToday", add);
     }
 
     public void BackOneMonth()
