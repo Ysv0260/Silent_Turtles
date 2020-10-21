@@ -30,7 +30,7 @@ public class Scriptstotal : MonoBehaviour
     {
         Reward();
         Multi();
-        //AutoStep();
+        AutoStep();
     }
    
     //charater currency saving
@@ -179,94 +179,27 @@ public class Scriptstotal : MonoBehaviour
     }
 
     //auto step for pet
+    private void AutoStep()
+    {
+        //TODO
+    }
+
+
+    //Animation Stuff
+
+    public GameObject Animation;
     
-    public GameObject Animation1;
-    public GameObject Animation2;
-    /*public GameObject Animation3;
-    public GameObject Animation4;
-    public GameObject Animation5;
-    public GameObject Animation6;*/
-    /*private void AutoStep()
+    public void setanimation()
     {
-        if(PlayerPrefs.GetInt("Pet", 1) == 1)
-        {
-            Animation1.SetActive(true);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 2)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(true);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 3)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(false);
-            Animation3.SetActive(true);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 4)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(true);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 5)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(true);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 6)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(true);
-        }
-        else
-        {
-            Animation1.SetActive(true);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-
-    }*/
-
-    public void animationtestingv1()
-    {
-        Animation1.SetActive(true);
-        Animation2.SetActive(false);
+        Animation.SetActive(false);
     }
 
-    public void animationtestingv2()
-    {
-        Animation1.SetActive(false);
-        Animation2.SetActive(true);
-    }
+    
+    
+    
 
 
+    
     //Testing
 
     public void ChangeStepsTodayV1()
@@ -281,11 +214,6 @@ public class Scriptstotal : MonoBehaviour
         PlayerPrefs.SetInt("StepsCurrency", 4999);
         PlayerPrefs.SetInt("Steps", 4999);
         PlayerPrefs.SetInt("StepsToday", 4999);
-    }
-
-    public void ButtonTest()
-    {
-        print("Button pressed");
     }
 
     public void ButtonPressR()
