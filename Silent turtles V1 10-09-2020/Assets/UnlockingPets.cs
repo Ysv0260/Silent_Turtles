@@ -8,7 +8,7 @@ public class UnlockingPets : MonoBehaviour
     // Start is called before the first frame update
     public GameObject MushroomPadlock;
     public bool MushroomPurchased;
-    
+
     public GameObject CatPadlock;
     public bool CatPurchased;
 
@@ -30,19 +30,59 @@ public class UnlockingPets : MonoBehaviour
 
     void Start()
     {
+        //Set that it's always on fairy for testing pruposes.
+        //PlayerPrefs.SetInt("ActiveState", 1);
 
-        /*
-         * Check what you have bought 
-         * remove lock from ones you have bought
-         * check which one is active 
-         * remove active from feriy 
-         * put active on the right one 
-         * 
-         * all within start
-         * 
-         * 
-         */
-        //get the playerprefs int
+        //Set the padlock to 1 for lock, to 2 for unlock
+        PlayerPrefs.SetInt("WolfPadlock", 2);
+        PlayerPrefs.SetInt("BearPadlock", 2);
+        PlayerPrefs.SetInt("MushroomPadlock", 2);
+        PlayerPrefs.SetInt("CatPadlock", 2);
+        PlayerPrefs.SetInt("GolemPadlock", 2);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //Same purpose to check if padlock is open or not but runs frame by frame
+        if (PlayerPrefs.GetInt("MushroomPadlock", 1) == 2)
+        {
+            MushroomPadlock.SetActive(false);
+        }
+        else
+        {
+            MushroomPadlock.SetActive(true);
+        }
+
+
+        if (PlayerPrefs.GetInt("CatPadlock", 1) == 2)
+        {
+            CatPadlock.SetActive(false);
+        }
+        else
+        {
+            CatPadlock.SetActive(true);
+        }
+
+
+        if (PlayerPrefs.GetInt("WolfPadlock", 1) == 2)
+        {
+            WolfPadlock.SetActive(false);
+        }
+        else
+        {
+            WolfPadlock.SetActive(true);
+        }
+
+
+        if (PlayerPrefs.GetInt("BearPadlock", 1) == 2)
+        {
+            BearPadlock.SetActive(false);
+        }
+        else
+        {
+            BearPadlock.SetActive(true);
+        }
 
         if (PlayerPrefs.GetInt("ActiveState", 1) == 1)
         {
@@ -65,20 +105,6 @@ public class UnlockingPets : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Testingactive(PlayerPrefs.GetInt("Activestate", 1));
-        if (PlayerPrefs.GetInt("Activestate", 1) == 6)
-        {
-            ActiveState1.SetActive(false);
-            ActiveState2.SetActive(false);
-            ActiveState3.SetActive(false);
-            ActiveState4.SetActive(false);
-            ActiveState5.SetActive(false);
-            ActiveState6.SetActive(true);
-        }
-    }
 
     public void Unlock_Golem()
     {
@@ -92,13 +118,13 @@ public class UnlockingPets : MonoBehaviour
             PlayerPrefs.SetInt("GolemPadlock", 1);
         }
     }
-    
+
 
     public void UnlockedAnimation()
     {
 
 
-        
+
         if (PlayerPrefs.GetInt("StepsCurrency", 0) >= 70000)
         {
             //BearPet
@@ -226,7 +252,7 @@ public class UnlockingPets : MonoBehaviour
             ActiveState6.SetActive(false);
             PlayerPrefs.SetInt("ActivePets", 2);
         }
-        
+
         else
         {
             //Default to fairy
