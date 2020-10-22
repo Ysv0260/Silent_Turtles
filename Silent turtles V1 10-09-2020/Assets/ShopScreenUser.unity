@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 1570021}
   - component: {fileID: 1570020}
   m_Layer: 5
-  m_Name: MushroomImage
+  m_Name: Char5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 534102090}
   - component: {fileID: 534102089}
   m_Layer: 5
-  m_Name: MushroomLock
+  m_Name: Char5Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 544901792}
   - component: {fileID: 544901791}
   m_Layer: 5
-  m_Name: Item 1
+  m_Name: Item1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1633,8 +1633,9 @@ GameObject:
   - component: {fileID: 1209170164}
   - component: {fileID: 1209170163}
   - component: {fileID: 1209170162}
+  - component: {fileID: 1209170165}
   m_Layer: 5
-  m_Name: Item 2
+  m_Name: item2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1706,9 +1707,42 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1925924641}
-        m_MethodName: ButtonPress
-        m_Mode: 1
+      - m_Target: {fileID: 784585206}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 648083441}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 92329561}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2109151833}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1754,6 +1788,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209170160}
   m_CullTransparentMesh: 0
+--- !u!114 &1209170165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209170160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46218a31625e5741b638d37ea214cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item1: {fileID: 0}
+  item2: {fileID: 0}
+  item3: {fileID: 0}
+  item4: {fileID: 0}
+  item5: {fileID: 0}
+  Lock2: {fileID: 0}
+  Lock3: {fileID: 0}
+  Lock4: {fileID: 0}
+  Lock5: {fileID: 0}
+  charaterNum: 0
 --- !u!1 &1261691039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2295,7 @@ GameObject:
   - component: {fileID: 1329857108}
   - component: {fileID: 1329857107}
   m_Layer: 5
-  m_Name: Item 5
+  m_Name: item5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2371,7 +2427,7 @@ GameObject:
   - component: {fileID: 1384337263}
   - component: {fileID: 1384337261}
   m_Layer: 5
-  m_Name: CostC
+  m_Name: Cost5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2639,8 +2695,9 @@ GameObject:
   - component: {fileID: 1572810641}
   - component: {fileID: 1572810640}
   - component: {fileID: 1572810639}
+  - component: {fileID: 1572810642}
   m_Layer: 5
-  m_Name: Item 3
+  m_Name: Item3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2713,7 +2770,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1925924641}
-        m_MethodName: ButtonPress
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2760,6 +2817,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572810637}
   m_CullTransparentMesh: 0
+--- !u!114 &1572810642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572810637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46218a31625e5741b638d37ea214cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item1: {fileID: 0}
+  item2: {fileID: 0}
+  item3: {fileID: 0}
+  item4: {fileID: 0}
+  item5: {fileID: 0}
+  Lock2: {fileID: 0}
+  Lock3: {fileID: 0}
+  Lock4: {fileID: 0}
+  Lock5: {fileID: 0}
+  charaterNum: 0
 --- !u!1 &1645904503
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,7 +2852,7 @@ GameObject:
   - component: {fileID: 1645904506}
   - component: {fileID: 1645904505}
   m_Layer: 5
-  m_Name: Item 4
+  m_Name: Item4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3040,7 +3119,7 @@ GameObject:
   - component: {fileID: 1867243421}
   - component: {fileID: 1867243420}
   m_Layer: 5
-  m_Name: MushroomActive
+  m_Name: Char5Active
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

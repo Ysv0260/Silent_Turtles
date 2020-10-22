@@ -24,15 +24,12 @@ public class UnlockingPets : MonoBehaviour
 
         //Set that it's always on fairy for testing pruposes.
         //PlayerPrefs.SetInt("ActiveState", 1);
-
         //Set the padlock to 1 for lock, to 2 for unlock
         PlayerPrefs.SetInt("WolfPadlock", 1);
         PlayerPrefs.SetInt("BearPadlock", 1);
         PlayerPrefs.SetInt("MushroomPadlock", 1);
         PlayerPrefs.SetInt("CatPadlock", 1);
         PlayerPrefs.SetInt("GolemPadlock", 1);
-
-     
 
     }
 
@@ -286,5 +283,4 @@ public class UnlockingPets : MonoBehaviour
         PlayerPrefs.SetInt("ActiveState", 1);
         ActiveStateFairy.SetActive(true);
     }
-
 }
