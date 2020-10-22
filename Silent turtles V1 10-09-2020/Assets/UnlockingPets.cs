@@ -7,19 +7,10 @@ public class UnlockingPets : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject MushroomPadlock;
-    public bool MushroomPurchased;
-
     public GameObject CatPadlock;
-    public bool CatPurchased;
-
     public GameObject WolfPadlock;
-    public bool WolfPurchased;
-
     public GameObject BearPadlock;
-    public bool BearPurchased;
-
     public GameObject GolemPadlock;
-    public bool GolemPurchased;
 
     public GameObject ActiveState1;
     public GameObject ActiveState2;
@@ -93,7 +84,7 @@ public class UnlockingPets : MonoBehaviour
             ActiveState5.SetActive(false);
             ActiveState6.SetActive(false);
         }
-        else if(PlayerPrefs.GetInt("ActiveState", 1) == 2)
+        else if (PlayerPrefs.GetInt("ActiveState", 1) == 2)
         {
             ActiveState1.SetActive(false);
             ActiveState2.SetActive(true);
@@ -114,7 +105,7 @@ public class UnlockingPets : MonoBehaviour
             GolemPurchased = true;
             GolemPadlock.SetActive(false);
             PlayerPrefs.SetInt("PetPurchased", 6);
-            PlayerPrefs.SetInt("Activestate",6);
+            PlayerPrefs.SetInt("Activestate", 6);
             PlayerPrefs.SetInt("GolemPadlock", 1);
         }
     }
@@ -172,7 +163,7 @@ public class UnlockingPets : MonoBehaviour
 
     public void Testingactive(int pet)
     {
-        if(pet == 1)
+        if (pet == 1)
         {
             //Default to fairy
             ActiveState1.SetActive(true);
@@ -197,7 +188,7 @@ public class UnlockingPets : MonoBehaviour
 
     public void SetStateToActive()
     {
-        if(GolemPadlock == false)
+        if (GolemPadlock == false)
         {
             //Golem Active state
             ActiveState1.SetActive(false);
@@ -241,7 +232,7 @@ public class UnlockingPets : MonoBehaviour
             ActiveState6.SetActive(false);
             PlayerPrefs.SetInt("ActivePets", 3);
         }
-        else if(MushroomPadlock == false)
+        else if (MushroomPadlock == false)
         {
             //Mushroom Active state
             ActiveState1.SetActive(false);
@@ -268,7 +259,7 @@ public class UnlockingPets : MonoBehaviour
 
     public void PetSetActive()
     {
-        if(PlayerPrefs.GetInt("PetPurchased", 0) == 6)
+        if (PlayerPrefs.GetInt("PetPurchased", 0) == 6)
         {
             PlayerPrefs.SetInt("SetPet", 6);
             PlayerPrefs.SetInt("ActiveState", 6);
