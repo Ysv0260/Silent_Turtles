@@ -49,7 +49,7 @@ namespace PedometerU.Tests
             Multi.text = "×" + PlayerPrefs.GetInt("Multi", 1);
 
             // Testing to make sure stats are working :-) 
-            Debuging(steps);
+           // Debuging(steps);
 
         }
 
