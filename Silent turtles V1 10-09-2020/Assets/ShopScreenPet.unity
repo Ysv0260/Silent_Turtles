@@ -3890,8 +3890,7 @@ MonoBehaviour:
   Arrow: {fileID: 0}
   RewardText: {fileID: 0}
   padlockItem: {fileID: 0}
-  Animation1: {fileID: 0}
-  Animation2: {fileID: 0}
+  Animation: {fileID: 0}
 --- !u!114 &1925924642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3915,6 +3914,7 @@ MonoBehaviour:
   ActiveStateWolf: {fileID: 1055107582}
   ActiveStateBear: {fileID: 601184546}
   ActiveStateGolem: {fileID: 138747953}
+  StepsCurrency: 0
 --- !u!1 &1930213888
 GameObject:
   m_ObjectHideFlags: 0
