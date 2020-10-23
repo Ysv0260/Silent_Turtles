@@ -15,11 +15,11 @@ public class InventoryActive : MonoBehaviour
         //PlayerPrefs.SetInt("ActiveState", 1);
 
         //Set the padlock to 1 for lock, to 2 for unlock
-        PlayerPrefs.SetInt("WolfPadlock", 2);
-        PlayerPrefs.SetInt("BearPadlock", 2);
-        PlayerPrefs.SetInt("MushroomPadlock", 2);
-        PlayerPrefs.SetInt("CatPadlock", 2);
-        PlayerPrefs.SetInt("GolemPadlock", 2);
+        //PlayerPrefs.SetInt("WolfPadlock", 2);
+        //PlayerPrefs.SetInt("BearPadlock", 2);
+        //PlayerPrefs.SetInt("MushroomPadlock", 2);
+        //PlayerPrefs.SetInt("CatPadlock", 2);
+        //PlayerPrefs.SetInt("GolemPadlock", 2);
     }
 
     // Update is called once per frame
@@ -144,6 +144,7 @@ public class InventoryActive : MonoBehaviour
         if (!PadlockGolem.activeSelf)
         {
             ActiveGolem.SetActive(true);
+            PlayerPrefs.SetInt("SetPet", 6);
             PlayerPrefs.SetInt("ActiveState", 6);
         }
     }
@@ -153,6 +154,7 @@ public class InventoryActive : MonoBehaviour
         if (!PadlockBear.activeSelf)
         {
             ActiveBear.SetActive(true);
+            PlayerPrefs.SetInt("SetPet", 5);
             PlayerPrefs.SetInt("ActiveState", 5);
         }
     }
@@ -161,6 +163,7 @@ public class InventoryActive : MonoBehaviour
         if (!PadlockWolf.activeSelf)
         {
             ActiveWolf.SetActive(true);
+            PlayerPrefs.SetInt("SetPet", 4);
             PlayerPrefs.SetInt("ActiveState", 4);
         }
     }
@@ -169,6 +172,7 @@ public class InventoryActive : MonoBehaviour
         if (!PadlockCat.activeSelf)
         {
             ActiveCat.SetActive(true);
+            PlayerPrefs.SetInt("SetPet", 3);
             PlayerPrefs.SetInt("ActiveState", 3);
         }
     }
@@ -177,12 +181,14 @@ public class InventoryActive : MonoBehaviour
         if (!PadlockMushroom.activeSelf)
         {
             ActiveMushroom.SetActive(true);
+            PlayerPrefs.SetInt("SetPet", 2);
             PlayerPrefs.SetInt("ActiveState", 2);
         }
     }
     public void InventoryFairyActive()
     { 
         ActiveFairy.SetActive(true);
+        PlayerPrefs.SetInt("SetPet", 1);
         PlayerPrefs.SetInt("ActiveState", 1);
     }
 
