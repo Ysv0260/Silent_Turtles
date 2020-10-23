@@ -25,7 +25,9 @@ public class ScrollBackground : MonoBehaviour
         {
             Repo();
         }
+
     }
+
 
     private void Repo()
     {

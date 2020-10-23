@@ -40,6 +40,7 @@ public class DevButton : MonoBehaviour
     public void Resetsteps()
     {
         print("ResetButtonPressed");
+        PlayerPrefs.SetInt("Steps", 0);
         PlayerPrefs.SetInt("StepsToday", 0);
         PlayerPrefs.SetInt("stepsYesterday", 0);
         PlayerPrefs.SetInt("StepsThisMonth", 0);
