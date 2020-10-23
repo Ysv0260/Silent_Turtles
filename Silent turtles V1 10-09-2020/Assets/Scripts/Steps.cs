@@ -76,12 +76,6 @@ namespace PedometerU.Tests
         }
 
         private void OnDisable () {
-            // look at main game the saving of data is kinda causing he multiplcation of data here
-            // you are saving it mutiple time each step maybe ?
-
-            PlayerPrefs.SetInt("StepsToday", PlayerPrefs.GetInt("Steps", 0));
-            PlayerPrefs.SetInt("StepsThisMonth", PlayerPrefs.GetInt("Steps", 0));
-
             // Release the pedometer
             Pedometer.Dispose();
             Pedometer = null;
@@ -114,21 +108,26 @@ namespace PedometerU.Tests
 
             string day  = System.DateTime.Now.ToString("dd");
             string Month = System.DateTime.Now.ToString("MM");
-            
+
+            print("TODAY STEPS BEFORE CHANGE"+PlayerPrefs.GetInt("StepsToday",0));
+
 
             if (PlayerPrefs.GetString("Today", null) != System.DateTime.Now.ToString("dd"))
             {
                 PlayerPrefs.SetInt("stepsYesterday",PlayerPrefs.GetInt("StepsToday", 0));
                 PlayerPrefs.SetInt("StepsToday", 0);
                 PlayerPrefs.SetString("Today", day);
-                
+                PlayerPrefs.SetInt("Reward", 0);
+
             }
+            print("TODAY STEPS AFTER CHANGE" + PlayerPrefs.GetInt("StepsToday", 0));
 
             if (PlayerPrefs.GetString("Month", null) != (System.DateTime.Now.ToString("MM")))
             {
                 PlayerPrefs.SetInt("StepsLastMonth", PlayerPrefs.GetInt("StepsThisMonth", 0));
                 PlayerPrefs.SetInt("StepsThisMonth", 0);
                 PlayerPrefs.SetString("Month", Month);
+                PlayerPrefs.SetInt("Reward", 0);
             }           
         }
     }

@@ -79,6 +79,7 @@ public class DevButton : MonoBehaviour
     public void BackOneMonth()
     {
         print("BackOneMonthPressed");
+
         //Change the date to somthing that isnt this month 
         //put steps into last month space within stats
         PlayerPrefs.SetString("Month", "00");
@@ -90,7 +91,5 @@ public class DevButton : MonoBehaviour
         //Change the date to somthing that isnt today 
         //put steps into yesterday space within stats
         PlayerPrefs.SetString("Today", "00");
-        PlayerPrefs.SetInt("Reward", 0);
-
     }
 }
