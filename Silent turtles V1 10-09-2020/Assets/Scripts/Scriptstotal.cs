@@ -180,91 +180,6 @@ public class Scriptstotal : MonoBehaviour
 
     //auto step for pet
     
-    public GameObject Animation1;
-    public GameObject Animation2;
-    /*public GameObject Animation3;
-    public GameObject Animation4;
-    public GameObject Animation5;
-    public GameObject Animation6;*/
-    /*private void AutoStep()
-    {
-        if(PlayerPrefs.GetInt("Pet", 1) == 1)
-        {
-            Animation1.SetActive(true);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 2)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(true);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 3)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(false);
-            Animation3.SetActive(true);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 4)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(true);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 5)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(true);
-            Animation6.SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("Pet", 1) == 6)
-        {
-            Animation1.SetActive(false);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(true);
-        }
-        else
-        {
-            Animation1.SetActive(true);
-            Animation2.SetActive(false);
-            Animation3.SetActive(false);
-            Animation4.SetActive(false);
-            Animation5.SetActive(false);
-            Animation6.SetActive(false);
-        }
-
-    }*/
-
-    public void animationtestingv1()
-    {
-        Animation1.SetActive(true);
-        Animation2.SetActive(false);
-    }
-
-    public void animationtestingv2()
-    {
-        Animation1.SetActive(false);
-        Animation2.SetActive(true);
-    }
 
 
     //Testing
@@ -296,18 +211,6 @@ public class Scriptstotal : MonoBehaviour
     public void ButtonPressL()
     {
         print("ButtonClicked left");
-    }
-
-    public void UnlockedAnimation()
-    {
-        //if (PlayerPrefs.GetInt("StepsCurrency", 0) == 1000)
-        //{
-        padlockItem.gameObject.SetActive(false);
-        //}
-        //else
-        //{
-        //    padlockItem.enabled = true;
-        //}
     }
 
 }

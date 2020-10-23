@@ -47,22 +47,27 @@ public class DevButton : MonoBehaviour
         PlayerPrefs.SetInt("StepsTotal", 0);
         PlayerPrefs.SetInt("StepsCurrency", 0);
         PlayerPrefs.SetInt("Reward", 0);
+        PlayerPrefs.SetInt("SetPet", 1);
+        PlayerPrefs.SetInt("ActiveState", 1);
     }
 
     public void AddSteps999()
     {
         int add = PlayerPrefs.GetInt("StepsToday",0) + 999;
         PlayerPrefs.SetInt("StepsToday", add);
+        PlayerPrefs.SetInt("StepsCurrency", add);
     }
     public void AddSteps4999()
     {
         int add = PlayerPrefs.GetInt("StepsToday", 0) + 4999;
         PlayerPrefs.SetInt("StepsToday", add);
+        PlayerPrefs.SetInt("StepsCurrency", add);
     }
     public void AddSteps9999()
     {
         int add = PlayerPrefs.GetInt("StepsToday", 0) + 9999;
         PlayerPrefs.SetInt("StepsToday", add);
+        PlayerPrefs.SetInt("StepsCurrency", add);
     }
 
     public void BackOneMonth()
