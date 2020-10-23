@@ -7,7 +7,7 @@ public class DevButton : MonoBehaviour
     public Button BackM;
     public Button BackD;
     public Button ResetSteps;
-    public Button Step999, Step4999, Step9999, Step999C, Step4999C, Step9999C;
+    public Button Step999, Step4999, Step9999;
 
     public bool visablity;
 
@@ -25,9 +25,6 @@ public class DevButton : MonoBehaviour
         BackM.gameObject.SetActive(visablity);
         BackD.gameObject.SetActive(visablity);
         ResetSteps.gameObject.SetActive(visablity);
-        Step999C.gameObject.SetActive(visablity);
-        Step4999C.gameObject.SetActive(visablity);
-        Step9999C.gameObject.SetActive(visablity);
         Step999.gameObject.SetActive(visablity);
         Step4999.gameObject.SetActive(visablity);
         Step9999.gameObject.SetActive(visablity);
@@ -49,6 +46,8 @@ public class DevButton : MonoBehaviour
         PlayerPrefs.SetInt("StepsTotal", 0);
         PlayerPrefs.SetInt("StepsCurrency", 0);
         PlayerPrefs.SetInt("Reward", 0);
+
+
         PlayerPrefs.SetInt("SetPet", 1);
         PlayerPrefs.SetInt("ActiveState", 1);
         PlayerPrefs.SetInt("WolfPadlock", 1);
@@ -58,36 +57,21 @@ public class DevButton : MonoBehaviour
         PlayerPrefs.SetInt("GolemPadlock", 1);
     }
 
-    public void AddStepsC999()
+    public void Add_1000()
     {
-        int add = PlayerPrefs.GetInt("StepsCurrency", 0) + 999;
-        PlayerPrefs.SetInt("StepsCurrency", add);
-    }
-    public void AddStepsC4999()
-    {
-        int add = PlayerPrefs.GetInt("StepsCurrency", 0) + 4999;
-        PlayerPrefs.SetInt("StepsCurrency", add);
-    }
-    public void AddStepsC9999()
-    {
-        int add = PlayerPrefs.GetInt("StepsCurrency", 0) + 9999;
-        PlayerPrefs.SetInt("StepsCurrency", add);
-    }
+        int total = PlayerPrefs.GetInt("StepsToday", 0) + 1000;
+        PlayerPrefs.SetInt("StepsToday", total);
 
-    public void AddStepsT999()
-    {
-        int add = PlayerPrefs.GetInt("StepsToday", 0) + 999;
-        PlayerPrefs.SetInt("StepsToday", add);
     }
-    public void AddStepsT4999()
+    public void Add_5000()
     {
-        int add = PlayerPrefs.GetInt("StepsToday", 0) + 4999;
-        PlayerPrefs.SetInt("StepsToday", add);
+        int total = PlayerPrefs.GetInt("StepsToday", 0) + 5000;
+        PlayerPrefs.SetInt("StepsToday", total);
     }
-    public void AddStepsT9999()
+    public void Add_10000()
     {
-        int add = PlayerPrefs.GetInt("StepsToday", 0) + 9999;
-        PlayerPrefs.SetInt("StepsToday", add);
+        int total = PlayerPrefs.GetInt("StepsToday", 0) + 10000;
+        PlayerPrefs.SetInt("StepsToday", total);
     }
 
     public void BackOneMonth()

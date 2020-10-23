@@ -13,32 +13,33 @@ namespace PedometerU.Tests
     using UnityEngine;
     using UnityEngine.UI;
 
-    public class Steps : MonoBehaviour {
+    public class Steps : MonoBehaviour
+    {
 
         private Pedometer Pedometer;
         public TextMeshProUGUI Mainsteps;
+        public TextMeshProUGUI Multi;
 
-        private void Start () {
 
+
+        private void Start()
+        {
             // Create a new pedometer
             Pedometer = new Pedometer(OnStep);
             // Reset UI
             OnStep(0, 0);
         }
 
-        
-
         private void OnStep(int steps, double distance)
         {
             // Display the values // Distance in Meters to the 2 decimals
             // distanceText.text = (distance).ToString("F2") + " Meter/s";      
 
-
             //This is the math outputs the steps to the game 
             int textout = PlayerPrefs.GetInt("StepsCurrency", 0) + steps;
             Mainsteps.text = textout + "";
             PlayerPrefs.SetInt("StepsForCurrency", steps);
-            print(PlayerPrefs.GetInt("Steps", 0));
+
             //Take the steps and place them within a player prefs
             int textoutv2 = PlayerPrefs.GetInt("StepsToday", 0) + steps;
             PlayerPrefs.SetInt("Steps", textoutv2);
@@ -46,9 +47,11 @@ namespace PedometerU.Tests
             // Check the date and move around the steps to right placement
             Chechdate();
 
+            // Check the muliplaction of the Charater
+            Multi.text = "×" + PlayerPrefs.GetInt("Multi", 1);
 
             // Testing to make sure stats are working :-) 
-             Debuging(steps);
+            Debuging(steps);
 
         }
 
@@ -74,17 +77,18 @@ namespace PedometerU.Tests
 
         }
 
-        private void OnDisable () {
+        private void OnDisable()
+        {
             // look at main game the saving of data is kinda causing he multiplcation of data here
             // you are saving it mutiple time each step maybe ?
-            print(PlayerPrefs.GetInt("Steps", 0));
+
             PlayerPrefs.SetInt("StepsToday", PlayerPrefs.GetInt("Steps", 0));
             PlayerPrefs.SetInt("StepsThisMonth", PlayerPrefs.GetInt("Steps", 0));
 
             // Release the pedometer
             Pedometer.Dispose();
             Pedometer = null;
-        }    
+        }
 
         public void Chechdate()
         {
@@ -109,26 +113,26 @@ namespace PedometerU.Tests
              */
             //string Week = System.DateTime.Now.ToString("dd");
             //PlayerPrefs.SetString("week", Week);
-            
 
-            
+
+            string day = System.DateTime.Now.ToString("dd");
+            string Month = System.DateTime.Now.ToString("MM");
+
 
             if (PlayerPrefs.GetString("Today", null) != System.DateTime.Now.ToString("dd"))
             {
-                string day  = System.DateTime.Now.ToString("dd");
-                PlayerPrefs.SetInt("stepsYesterday",PlayerPrefs.GetInt("StepsToday", 0));
+                PlayerPrefs.SetInt("stepsYesterday", PlayerPrefs.GetInt("StepsToday", 0));
                 PlayerPrefs.SetInt("StepsToday", 0);
                 PlayerPrefs.SetString("Today", day);
-                
+
             }
 
             if (PlayerPrefs.GetString("Month", null) != (System.DateTime.Now.ToString("MM")))
             {
-                string Month = System.DateTime.Now.ToString("MM");
                 PlayerPrefs.SetInt("StepsLastMonth", PlayerPrefs.GetInt("StepsThisMonth", 0));
                 PlayerPrefs.SetInt("StepsThisMonth", 0);
                 PlayerPrefs.SetString("Month", Month);
-            }           
+            }
         }
     }
 }
