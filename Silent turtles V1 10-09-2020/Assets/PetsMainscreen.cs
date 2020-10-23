@@ -1,20 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PetsMainscreen : MonoBehaviour
 {
+    
     public GameObject FairyAni, MushroomAni, CatAni, DogAni, BearAni, GolemAni;
 
-    // Start is called before the first frame update
-    void Start()
+    // Start is called before the first frame update 
+    private IEnumerator SpawnTimer()
     {
-        
+        while (true)
+        {
+            yield return new WaitForSeconds(TimeSeconds);
+            GoldValue++;
+        }
     }
+
 
     // Update is called once per frame
     void Update()
     {
+            
+        if ()
+        {
+            StartCoroutine(SpawnTimer());
+            Debug.Log("INSIDE AUTOSTEP");
+           
+            }
+        }
+
+
+
         if (PlayerPrefs.GetInt("SetPet", 1) == 1)
         {
             //Fairy
