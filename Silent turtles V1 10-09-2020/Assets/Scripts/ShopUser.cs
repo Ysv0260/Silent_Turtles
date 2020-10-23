@@ -51,7 +51,7 @@ public class ShopUser : MonoBehaviour
             cost5p.SetActive(false);
         }
 
-        if (PlayerPrefs.GetInt(")
+      
         //which items have been bought, set lock active to false if player owns
         //set active to whatever player
     }
@@ -62,7 +62,7 @@ public class ShopUser : MonoBehaviour
 
         if (money >= 50000)
         {
-            Lock2.SetActive(false);
+            //Lock2.SetActive(false);
             PlayerPrefs.SetInt("PlayerActive", 2);
             PlayerPrefs.SetInt("Kight", 1);
             /*CharaterCost.SetActive(false);
