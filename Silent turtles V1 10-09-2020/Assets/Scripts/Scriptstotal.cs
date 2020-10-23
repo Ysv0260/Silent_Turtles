@@ -30,7 +30,7 @@ public class Scriptstotal : MonoBehaviour
     {
         Reward();
         Multi();
-        //AutoStep();
+        AutoStep();
     }
    
     //charater currency saving
@@ -179,9 +179,28 @@ public class Scriptstotal : MonoBehaviour
     }
 
     //auto step for pet
+    private void AutoStep()
+    {
+        //TODO
+    }
+
+
+    //Animation Stuff
+
+    public GameObject Animation;
+    
+    public void setanimation()
+    {
+        Animation.SetActive(false);
+    }
+
+
+    
+    
     
 
 
+    
     //Testing
 
     public void ChangeStepsTodayV1()
@@ -196,11 +215,6 @@ public class Scriptstotal : MonoBehaviour
         PlayerPrefs.SetInt("StepsCurrency", 4999);
         PlayerPrefs.SetInt("Steps", 4999);
         PlayerPrefs.SetInt("StepsToday", 4999);
-    }
-
-    public void ButtonTest()
-    {
-        print("Button pressed");
     }
 
     public void ButtonPressR()
