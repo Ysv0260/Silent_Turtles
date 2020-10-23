@@ -49,6 +49,11 @@ public class DevButton : MonoBehaviour
         PlayerPrefs.SetInt("Reward", 0);
         PlayerPrefs.SetInt("SetPet", 1);
         PlayerPrefs.SetInt("ActiveState", 1);
+        PlayerPrefs.SetInt("WolfPadlock", 1);
+        PlayerPrefs.SetInt("BearPadlock", 1);
+        PlayerPrefs.SetInt("MushroomPadlock", 1);
+        PlayerPrefs.SetInt("CatPadlock", 1);
+        PlayerPrefs.SetInt("GolemPadlock", 1);
     }
 
     public void AddSteps999()
