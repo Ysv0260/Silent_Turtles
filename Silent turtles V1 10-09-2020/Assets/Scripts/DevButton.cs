@@ -7,9 +7,8 @@ public class DevButton : MonoBehaviour
     public Button BackM;
     public Button BackD;
     public Button ResetSteps;
-    public Button Step999;
-    public Button Step4999;
-    public Button Step9999;
+    public Button Step999, Step4999, Step9999, Step999C, Step4999C, Step9999C;
+
     public bool visablity;
 
     // Start is called before the first frame update
@@ -26,6 +25,9 @@ public class DevButton : MonoBehaviour
         BackM.gameObject.SetActive(visablity);
         BackD.gameObject.SetActive(visablity);
         ResetSteps.gameObject.SetActive(visablity);
+        Step999C.gameObject.SetActive(visablity);
+        Step4999C.gameObject.SetActive(visablity);
+        Step9999C.gameObject.SetActive(visablity);
         Step999.gameObject.SetActive(visablity);
         Step4999.gameObject.SetActive(visablity);
         Step9999.gameObject.SetActive(visablity);
@@ -56,23 +58,36 @@ public class DevButton : MonoBehaviour
         PlayerPrefs.SetInt("GolemPadlock", 1);
     }
 
-    public void AddSteps999()
+    public void AddStepsC999()
     {
-        int add = PlayerPrefs.GetInt("StepsToday",0) + 999;
-        PlayerPrefs.SetInt("StepsToday", add);
+        int add = PlayerPrefs.GetInt("StepsCurrency", 0) + 999;
         PlayerPrefs.SetInt("StepsCurrency", add);
     }
-    public void AddSteps4999()
+    public void AddStepsC4999()
+    {
+        int add = PlayerPrefs.GetInt("StepsCurrency", 0) + 4999;
+        PlayerPrefs.SetInt("StepsCurrency", add);
+    }
+    public void AddStepsC9999()
+    {
+        int add = PlayerPrefs.GetInt("StepsCurrency", 0) + 9999;
+        PlayerPrefs.SetInt("StepsCurrency", add);
+    }
+
+    public void AddStepsT999()
+    {
+        int add = PlayerPrefs.GetInt("StepsToday", 0) + 999;
+        PlayerPrefs.SetInt("StepsToday", add);
+    }
+    public void AddStepsT4999()
     {
         int add = PlayerPrefs.GetInt("StepsToday", 0) + 4999;
         PlayerPrefs.SetInt("StepsToday", add);
-        PlayerPrefs.SetInt("StepsCurrency", add);
     }
-    public void AddSteps9999()
+    public void AddStepsT9999()
     {
         int add = PlayerPrefs.GetInt("StepsToday", 0) + 9999;
         PlayerPrefs.SetInt("StepsToday", add);
-        PlayerPrefs.SetInt("StepsCurrency", add);
     }
 
     public void BackOneMonth()
@@ -89,7 +104,6 @@ public class DevButton : MonoBehaviour
         //Change the date to somthing that isnt today 
         //put steps into yesterday space within stats
         PlayerPrefs.SetString("Today", "00");
-        PlayerPrefs.SetInt("Reward", 0);
 
     }
 }

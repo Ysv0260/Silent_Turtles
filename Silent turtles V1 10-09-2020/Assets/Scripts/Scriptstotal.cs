@@ -14,6 +14,9 @@ public class Scriptstotal : MonoBehaviour
     public Image Arrow;
     public TextMeshProUGUI RewardText;
     public Image padlockItem;
+    public TextMeshProUGUI AutoStep;
+
+
 
     //this will run when the script gets loaded
     private void Start()
@@ -30,9 +33,54 @@ public class Scriptstotal : MonoBehaviour
     {
         Reward();
         Multi();
-        AutoStep();
+        //PetAuto();
     }
+
+    public void PetAddStep()
+    {
+        Debug.Log("PetAUTO adding 1 Step");
+        int steps = PlayerPrefs.GetInt("StepsCurreny", 0) + 1;
+        PlayerPrefs.SetInt("StepsCurreny", steps);
+    }
+
    
+    public void PetAuto()
+    {
+        switch (PlayerPrefs.GetInt("SetPet", 1))
+        {
+            case 1: 
+                AutoStep.text = "0/Sec";
+                return;
+            case 2:
+                AutoStep.text = "0.1/Sec";
+                InvokeRepeating("PetAddStep", 1.0f, 10.0f);
+                return;
+            case 3:
+                AutoStep.text = "0.5/Sec";
+                InvokeRepeating("PetAddStep", 1.0f, 5.0f);
+                return;
+            case 4:
+                AutoStep.text = "0.8/Sec";
+                InvokeRepeating("PetAddStep", 1.0f, 2.0f);
+                return;
+            case 5:
+                AutoStep.text = "1/Sec";
+                InvokeRepeating("PetAddStep", 1.0f, 1.0f);
+                return;
+            case 6:
+                AutoStep.text = "2/Sec";
+                InvokeRepeating("PetAddStep", 1.0f, 0.5f);
+                return;
+        }
+    }
+
+
+
+
+
+
+
+
     //charater currency saving
     private void CharSave()
     {
@@ -128,7 +176,7 @@ public class Scriptstotal : MonoBehaviour
         //10000 steps
         if (PlayerPrefs.GetInt("Reward", 0) == 2)
         {
-            if (PlayerPrefs.GetInt("Steps", 0) >= 10000)
+            if (PlayerPrefs.GetInt("StepsToday", 0) >= 10000)
             {
                 RewardText.text = "Quest Completed\n+5000";
                 StartCoroutine(MakeQuestAppear());
@@ -140,7 +188,7 @@ public class Scriptstotal : MonoBehaviour
         //5000 steps
         if (PlayerPrefs.GetInt("Reward", 0) == 1)
         {
-            if (PlayerPrefs.GetInt("Steps", 0) >= 5000)
+            if (PlayerPrefs.GetInt("StepsToday", 0) >= 5000)
             {
                 RewardText.text = "Quest Completed\n+2500";
                 StartCoroutine(MakeQuestAppear());
@@ -152,7 +200,7 @@ public class Scriptstotal : MonoBehaviour
         //1000 steps
         if (PlayerPrefs.GetInt("Reward", 0) == 0)
         {
-            if (PlayerPrefs.GetInt("Steps", 0) >= 1000)
+            if (PlayerPrefs.GetInt("StepsToday", 0) >= 1000)
             {
                 RewardText.text = "Quest Completed\n+500";
                 StartCoroutine(MakeQuestAppear());
@@ -179,10 +227,7 @@ public class Scriptstotal : MonoBehaviour
     }
 
     //auto step for pet
-    private void AutoStep()
-    {
-        //TODO
-    }
+    
 
 
     //Animation Stuff
