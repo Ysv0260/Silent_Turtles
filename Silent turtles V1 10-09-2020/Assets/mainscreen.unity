@@ -845,7 +845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484018575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 387.70776, y: 200.776, z: 23986.566}
+  m_LocalPosition: {x: 387.70776, y: 201, z: 23986.566}
   m_LocalScale: {x: 1990.0707, y: 1990.0707, z: 1990.0707}
   m_Children: []
   m_Father: {fileID: 906773108}
@@ -877,7 +877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501827643}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 401, y: 157.4, z: 23986.566}
+  m_LocalPosition: {x: 401, y: 158, z: 23986.566}
   m_LocalScale: {x: 108.043594, y: 108.043594, z: 108.043594}
   m_Children: []
   m_Father: {fileID: 906773108}
@@ -893,7 +893,7 @@ Animator:
   m_GameObject: {fileID: 501827643}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2bbd9f4e94a556446aecdf8badd223fa, type: 2}
+  m_Controller: {fileID: 9100000, guid: 56763d19f2046254a81b287f1a422c0c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1527,7 +1527,7 @@ GameObject:
   - component: {fileID: 778402209}
   - component: {fileID: 778402208}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2307,7 +2307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029303631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 393.70776, y: 130, z: 23986.566}
+  m_LocalPosition: {x: 393.70776, y: 52, z: 23986.566}
   m_LocalScale: {x: 96.29683, y: 96.29683, z: 96.29683}
   m_Children: []
   m_Father: {fileID: 906773108}

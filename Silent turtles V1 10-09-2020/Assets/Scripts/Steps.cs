@@ -130,13 +130,13 @@ namespace PedometerU.Tests
                 PlayerPrefs.SetString("Today", day);
 
             }
+           
 
             if (PlayerPrefs.GetString("Month", null) != (System.DateTime.Now.ToString("MM")))
             {
                 PlayerPrefs.SetInt("StepsLastMonth", PlayerPrefs.GetInt("StepsThisMonth", 0));
                 PlayerPrefs.SetInt("StepsThisMonth", 0);
                 PlayerPrefs.SetString("Month", Month);
-            }
         }
     }
 }
