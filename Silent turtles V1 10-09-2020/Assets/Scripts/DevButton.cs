@@ -7,9 +7,8 @@ public class DevButton : MonoBehaviour
     public Button BackM;
     public Button BackD;
     public Button ResetSteps;
-    public Button Step999;
-    public Button Step4999;
-    public Button Step9999;
+    public Button Step999, Step4999, Step9999;
+
     public bool visablity;
 
     // Start is called before the first frame update
@@ -48,6 +47,8 @@ public class DevButton : MonoBehaviour
         PlayerPrefs.SetInt("StepsTotal", 0);
         PlayerPrefs.SetInt("StepsCurrency", 0);
         PlayerPrefs.SetInt("Reward", 0);
+
+
         PlayerPrefs.SetInt("SetPet", 1);
         PlayerPrefs.SetInt("ActiveState", 1);
         PlayerPrefs.SetInt("WolfPadlock", 1);
@@ -57,23 +58,24 @@ public class DevButton : MonoBehaviour
         PlayerPrefs.SetInt("GolemPadlock", 1);
     }
 
-    public void AddSteps999()
+    public void Add_1000()
     {
-        int add = PlayerPrefs.GetInt("StepsToday",0) + 999;
-        PlayerPrefs.SetInt("StepsToday", add);
-        PlayerPrefs.SetInt("StepsCurrency", add);
+        int total = PlayerPrefs.GetInt("StepsToday", 0) + 1000;
+        PlayerPrefs.SetInt("StepsToday", total);
+        PlayerPrefs.SetInt("StepsCurrency", total);
+
     }
-    public void AddSteps4999()
+    public void Add_5000()
     {
-        int add = PlayerPrefs.GetInt("StepsToday", 0) + 4999;
-        PlayerPrefs.SetInt("StepsToday", add);
-        PlayerPrefs.SetInt("StepsCurrency", add);
+        int total = PlayerPrefs.GetInt("StepsToday", 0) + 5000;
+        PlayerPrefs.SetInt("StepsToday", total);
+        PlayerPrefs.SetInt("StepsCurrency", total);
     }
-    public void AddSteps9999()
+    public void Add_10000()
     {
-        int add = PlayerPrefs.GetInt("StepsToday", 0) + 9999;
-        PlayerPrefs.SetInt("StepsToday", add);
-        PlayerPrefs.SetInt("StepsCurrency", add);
+        int total = PlayerPrefs.GetInt("StepsToday", 0) + 10000;
+        PlayerPrefs.SetInt("StepsToday", total);
+        PlayerPrefs.SetInt("StepsCurrency", total);
     }
 
     public void BackOneMonth()

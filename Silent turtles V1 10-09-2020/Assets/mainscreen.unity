@@ -1254,7 +1254,8 @@ MonoBehaviour:
   Arrow: {fileID: 1238944340}
   RewardText: {fileID: 805851771}
   padlockItem: {fileID: 0}
-  Animation: {fileID: 0}
+  AutoStep: {fileID: 798457023}
+  StepsCurrency: {fileID: 1165170987}
 --- !u!114 &632202247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,7 +1627,7 @@ GameObject:
   - component: {fileID: 798457024}
   - component: {fileID: 798457023}
   m_Layer: 5
-  m_Name: amount
+  m_Name: AutoSteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2060,7 +2061,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mainsteps: {fileID: 1165170987}
-  Multi: {fileID: 856165327}
 --- !u!1 &856165325
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,7 +3667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &2049950021
 AudioSource:
   m_ObjectHideFlags: 0
