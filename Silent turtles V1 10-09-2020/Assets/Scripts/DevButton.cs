@@ -61,17 +61,20 @@ public class DevButton : MonoBehaviour
     {
         int total = PlayerPrefs.GetInt("StepsToday", 0) + 1000;
         PlayerPrefs.SetInt("StepsToday", total);
+        PlayerPrefs.SetInt("StepsCurrency", total);
 
     }
     public void Add_5000()
     {
         int total = PlayerPrefs.GetInt("StepsToday", 0) + 5000;
         PlayerPrefs.SetInt("StepsToday", total);
+        PlayerPrefs.SetInt("StepsCurrency", total);
     }
     public void Add_10000()
     {
         int total = PlayerPrefs.GetInt("StepsToday", 0) + 10000;
         PlayerPrefs.SetInt("StepsToday", total);
+        PlayerPrefs.SetInt("StepsCurrency", total);
     }
 
     public void BackOneMonth()
