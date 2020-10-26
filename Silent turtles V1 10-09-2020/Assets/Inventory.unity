@@ -5374,7 +5374,8 @@ MonoBehaviour:
   Arrow: {fileID: 0}
   RewardText: {fileID: 0}
   padlockItem: {fileID: 0}
-  Animation: {fileID: 0}
+  AutoStep: {fileID: 0}
+  StepsCurrency: {fileID: 0}
 --- !u!114 &1925924642
 MonoBehaviour:
   m_ObjectHideFlags: 0
