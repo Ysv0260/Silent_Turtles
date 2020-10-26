@@ -39,8 +39,8 @@ public class InfiniteBackground : MonoBehaviour
         }
         
         //Infinite Effect
-        float tempCam = (cam.transform.position.x * (1 - InfiniteEffect));
-        float distance = (cam.transform.position.x * InfiniteEffect);
+        float tempCam = (ridge.transform.position.x * (1 - InfiniteEffect));
+        float distance = (ridge.transform.position.x * InfiniteEffect);
 
         transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
 

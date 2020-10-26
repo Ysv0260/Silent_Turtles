@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 1570021}
   - component: {fileID: 1570020}
   m_Layer: 5
-  m_Name: MushroomImage
+  m_Name: CentaurImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 368004913}
   - component: {fileID: 368004912}
   m_Layer: 5
-  m_Name: MushroomImage
+  m_Name: BoyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 534102090}
   - component: {fileID: 534102089}
   m_Layer: 5
-  m_Name: MushroomLock
+  m_Name: CentaurLock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1453,7 +1453,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1925924643}
-        m_MethodName: InventoryChar1Active
+        m_MethodName: Active_char1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2681,7 +2681,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1925924643}
-        m_MethodName: InventoryChar2Active
+        m_MethodName: Active_char2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3567,7 +3567,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1925924643}
-        m_MethodName: InventoryChar5Active
+        m_MethodName: Active_char5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3894,7 +3894,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1925924643}
-        m_MethodName: InventoryChar3Active
+        m_MethodName: Active_char3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4303,7 +4303,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1925924643}
-        m_MethodName: InventoryChar4Active
+        m_MethodName: Active_char4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4913,7 +4913,7 @@ GameObject:
   - component: {fileID: 1867243421}
   - component: {fileID: 1867243420}
   m_Layer: 5
-  m_Name: MushroomActive
+  m_Name: CentaurActive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5411,15 +5411,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ddf5e454abb6f42b3c9058e54fc43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active1: {fileID: 2109151833}
-  Active2: {fileID: 92329561}
-  Active3: {fileID: 1995839570}
-  Active4: {fileID: 1263988839}
-  Active5: {fileID: 1867243418}
-  Padlock2: {fileID: 784585206}
-  Padlock3: {fileID: 2142138155}
-  Padlock4: {fileID: 239627035}
-  Padlock5: {fileID: 534102087}
+  Char2lock: {fileID: 784585206}
+  Char3lock: {fileID: 2142138155}
+  Char4lock: {fileID: 239627035}
+  Char5lock: {fileID: 534102087}
+  Char1active: {fileID: 2109151833}
+  Char2active: {fileID: 92329561}
+  Char3active: {fileID: 1995839570}
+  Char4active: {fileID: 1263988839}
+  Char5active: {fileID: 1867243418}
 --- !u!1 &1995839570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5961,7 +5961,7 @@ GameObject:
   - component: {fileID: 2109151836}
   - component: {fileID: 2109151835}
   m_Layer: 5
-  m_Name: MushroomActive
+  m_Name: BoyActive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

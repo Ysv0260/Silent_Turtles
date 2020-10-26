@@ -56,6 +56,13 @@ public class DevButton : MonoBehaviour
         PlayerPrefs.SetInt("MushroomPadlock", 1);
         PlayerPrefs.SetInt("CatPadlock", 1);
         PlayerPrefs.SetInt("GolemPadlock", 1);
+
+
+        PlayerPrefs.SetInt("SetCharacter", 1);
+        PlayerPrefs.SetInt("Char2lock", 1);
+        PlayerPrefs.SetInt("Char3lock", 1);
+        PlayerPrefs.SetInt("Char4lock", 1);
+        PlayerPrefs.SetInt("Char5lock", 1);
     }
 
     public void Add_1000()
