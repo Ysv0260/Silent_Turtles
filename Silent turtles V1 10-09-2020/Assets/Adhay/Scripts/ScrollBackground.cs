@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScrollBackground : MonoBehaviour
 {
+   
+
     private BoxCollider2D box;
     private Rigidbody2D ridge;
     private float width;
@@ -25,7 +28,9 @@ public class ScrollBackground : MonoBehaviour
         {
             Repo();
         }
+
     }
+
 
     private void Repo()
     {

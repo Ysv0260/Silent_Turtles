@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,11 +12,16 @@ public class Scriptstotal : MonoBehaviour
     public Image Arrow;
     public TextMeshProUGUI RewardText;
     public Image padlockItem;
+    public TextMeshProUGUI AutoStep;
+    public TextMeshProUGUI StepsCurrency;
+
+    private string SecCompare;
+    private bool Flag;
 
     //this will run when the script gets loaded
     private void Start()
     {
-        
+      
         if (PlayerPrefs.GetString("TodayV2", null) != System.DateTime.Now.ToString("dd"))
         {
             PlayerPrefs.SetString("TodayV2", System.DateTime.Now.ToString("dd"));
@@ -28,12 +31,94 @@ public class Scriptstotal : MonoBehaviour
     //this method will run each new frame of the game
     void Update()
     {
-        Reward();
-        Multi();
-        AutoStep();
-        //if error then comment out the above 3 lines, reset steps in unity from dev button and then uncomment
+        if (SceneManager.GetActiveScene().name == "mainscreen")
+        {
+            Reward();
+            PetAuto();
+        }
+
     }
-   
+
+    public void PetAddStep(int num)
+    {
+
+        if(Flag == false)
+        {
+            int steps = PlayerPrefs.GetInt("StepsCurrency", 0) + num;
+            PlayerPrefs.SetInt("StepsCurrency", steps);
+            StepsCurrency.text = "" + PlayerPrefs.GetInt("StepsCurrency", 0); 
+            Flag = true;
+        }
+    }
+
+
+    public void PetAuto()
+    {
+        string Sec = System.DateTime.Now.ToString("ss");
+        if (SecCompare != Sec)
+        {
+            Flag = false;
+            SecCompare = Sec;
+        }
+
+        Debug.Log("Sec:" + Sec);
+        Debug.Log("Flag:" + Flag);
+
+        switch (PlayerPrefs.GetInt("SetPet", 1))
+        {
+            case 1:
+                AutoStep.text = "0.0/Sec";
+                return;
+            case 2:
+                AutoStep.text = "0.1/Sec";
+                if (int.Parse(Sec) % 10 == 0)
+                {
+                    PetAddStep(1);
+                    return;
+                }
+                return;
+            case 3:
+                AutoStep.text = "0.2/Sec";
+                if (int.Parse(Sec) % 5 == 0)
+                {
+                    PetAddStep(1);
+                    return;
+                }
+                return;
+            case 4:
+                AutoStep.text = "0.5/Sec";
+                if (int.Parse(Sec) % 2 == 0)
+                {
+                    PetAddStep(1);
+                    return;
+                }
+                return;
+            case 5:
+                AutoStep.text = "1/Sec";
+                if (int.Parse(Sec) % 1 == 0)
+                {
+                    PetAddStep(1);
+                    return;
+                }
+                return;
+            case 6:
+                AutoStep.text = "2/Sec";
+                if (int.Parse(Sec) % 1 == 0)
+                {
+                    PetAddStep(2);
+                    return;
+                }
+                return;
+        }
+    }
+
+
+
+
+
+
+
+
     //charater currency saving
     private void CharSave()
     {
@@ -44,12 +129,6 @@ public class Scriptstotal : MonoBehaviour
     }
 
     //scene change
-
-    public void Statscreen()
-    {
-        SceneManager.LoadScene(sceneBuildIndex: 1);
-        print("Forward from start scene");
-    }
 
     public void NextScene(int scene)
     {
@@ -78,7 +157,7 @@ public class Scriptstotal : MonoBehaviour
 
 
     //Sound
-   
+
     public void MuteVolume()
     {
         AudioListener.pause = !AudioListener.pause;
@@ -129,7 +208,7 @@ public class Scriptstotal : MonoBehaviour
         //10000 steps
         if (PlayerPrefs.GetInt("Reward", 0) == 2)
         {
-            if (PlayerPrefs.GetInt("Steps", 0) >= 10000)
+            if (PlayerPrefs.GetInt("StepsToday", 0) >= 10000)
             {
                 RewardText.text = "Quest Completed\n+5000";
                 StartCoroutine(MakeQuestAppear());
@@ -141,7 +220,7 @@ public class Scriptstotal : MonoBehaviour
         //5000 steps
         if (PlayerPrefs.GetInt("Reward", 0) == 1)
         {
-            if (PlayerPrefs.GetInt("Steps", 0) >= 5000)
+            if (PlayerPrefs.GetInt("StepsToday", 0) >= 5000)
             {
                 RewardText.text = "Quest Completed\n+2500";
                 StartCoroutine(MakeQuestAppear());
@@ -153,7 +232,7 @@ public class Scriptstotal : MonoBehaviour
         //1000 steps
         if (PlayerPrefs.GetInt("Reward", 0) == 0)
         {
-            if (PlayerPrefs.GetInt("Steps", 0) >= 1000)
+            if (PlayerPrefs.GetInt("StepsToday", 0) >= 1000)
             {
                 RewardText.text = "Quest Completed\n+500";
                 StartCoroutine(MakeQuestAppear());
@@ -164,59 +243,12 @@ public class Scriptstotal : MonoBehaviour
         }
     }
 
-    
 
 
 
-    //Adhay is going to do this
 
-
-    //multipler for the players charater
-
-    private void Multi()
-    {
-        //TODO
-        PlayerPrefs.SetFloat("Muti", 1f);
-    }
-
-    //auto step for pet
-    private void AutoStep()
-    {
-        //TODO
-    }
-
-
-    //Animation Stuff
-
-    public GameObject Animation;
-    
-    public void setanimation()
-    {
-        Animation.SetActive(false);
-    }
-
-
-    
-    
-    
-
-
-    
     //Testing
 
-    public void ChangeStepsTodayV1()
-    {
-        PlayerPrefs.SetInt("StepsCurrency", 999);
-        PlayerPrefs.SetInt("Steps", 999);
-        PlayerPrefs.SetInt("StepsToday", 999);
-    }
-
-    public void ChangeStepsTodayV2()
-    {
-        PlayerPrefs.SetInt("StepsCurrency", 4999);
-        PlayerPrefs.SetInt("Steps", 4999);
-        PlayerPrefs.SetInt("StepsToday", 4999);
-    }
 
     public void ButtonPressR()
     {
