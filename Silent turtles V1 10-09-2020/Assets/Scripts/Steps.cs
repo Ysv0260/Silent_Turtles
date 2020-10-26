@@ -34,7 +34,7 @@ namespace PedometerU.Tests
         {
             // Display the values // Distance in Meters to the 2 decimals
             // distanceText.text = (distance).ToString("F2") + " Meter/s";      
-            
+
             // Check the date and move around the steps to right placement
             Chechdate();
 
@@ -85,11 +85,11 @@ namespace PedometerU.Tests
 
             PlayerPrefs.SetInt("StepsToday", PlayerPrefs.GetInt("StepsD", 0));
             PlayerPrefs.SetInt("StepsThisMonth", PlayerPrefs.GetInt("StepsM", 0));
-           
+
             if (SceneManager.GetActiveScene().name == "mainscreen")
             {
                 Pedometer.Dispose();
-                Pedometer = null;              
+                Pedometer = null;
             }
             // Release the pedometer
         }
@@ -130,13 +130,14 @@ namespace PedometerU.Tests
                 PlayerPrefs.SetString("Today", day);
 
             }
-           
+
 
             if (PlayerPrefs.GetString("Month", null) != (System.DateTime.Now.ToString("MM")))
             {
                 PlayerPrefs.SetInt("StepsLastMonth", PlayerPrefs.GetInt("StepsThisMonth", 0));
                 PlayerPrefs.SetInt("StepsThisMonth", 0);
                 PlayerPrefs.SetString("Month", Month);
+            }
         }
     }
 }
