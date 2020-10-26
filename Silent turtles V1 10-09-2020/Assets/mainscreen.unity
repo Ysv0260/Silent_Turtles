@@ -1416,6 +1416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 517299481}
+  - component: {fileID: 517299482}
   m_Layer: 0
   m_Name: Animation Char
   m_TagString: Untagged

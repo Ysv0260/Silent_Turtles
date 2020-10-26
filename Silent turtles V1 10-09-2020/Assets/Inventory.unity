@@ -1452,8 +1452,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1925924641}
-        m_MethodName: ButtonPressL
+      - m_Target: {fileID: 1925924643}
+        m_MethodName: InventoryChar1Active
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2680,8 +2680,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1925924641}
-        m_MethodName: ButtonPressL
+      - m_Target: {fileID: 1925924643}
+        m_MethodName: InventoryChar2Active
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3566,8 +3566,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1925924641}
-        m_MethodName: ButtonPressL
+      - m_Target: {fileID: 1925924643}
+        m_MethodName: InventoryChar5Active
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3893,8 +3893,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1925924641}
-        m_MethodName: ButtonPressL
+      - m_Target: {fileID: 1925924643}
+        m_MethodName: InventoryChar3Active
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4302,8 +4302,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1925924641}
-        m_MethodName: ButtonPressL
+      - m_Target: {fileID: 1925924643}
+        m_MethodName: InventoryChar4Active
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5265,6 +5265,7 @@ GameObject:
   - component: {fileID: 1925924637}
   - component: {fileID: 1925924641}
   - component: {fileID: 1925924642}
+  - component: {fileID: 1925924643}
   m_Layer: 5
   m_Name: ShopScreenCanvas
   m_TagString: Untagged
@@ -5373,7 +5374,8 @@ MonoBehaviour:
   Arrow: {fileID: 0}
   RewardText: {fileID: 0}
   padlockItem: {fileID: 0}
-  Animation: {fileID: 0}
+  AutoStep: {fileID: 0}
+  StepsCurrency: {fileID: 0}
 --- !u!114 &1925924642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5397,6 +5399,27 @@ MonoBehaviour:
   PadlockCat: {fileID: 1459865636}
   PadlockWolf: {fileID: 50780250}
   PadlockMushroom: {fileID: 1252009129}
+--- !u!114 &1925924643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925924636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ddf5e454abb6f42b3c9058e54fc43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active1: {fileID: 2109151833}
+  Active2: {fileID: 92329561}
+  Active3: {fileID: 1995839570}
+  Active4: {fileID: 1263988839}
+  Active5: {fileID: 1867243418}
+  Padlock2: {fileID: 784585206}
+  Padlock3: {fileID: 2142138155}
+  Padlock4: {fileID: 239627035}
+  Padlock5: {fileID: 534102087}
 --- !u!1 &1995839570
 GameObject:
   m_ObjectHideFlags: 0
