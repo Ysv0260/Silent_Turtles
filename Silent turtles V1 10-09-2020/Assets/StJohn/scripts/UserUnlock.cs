@@ -11,10 +11,10 @@ public class UserUnlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("Char2lock", 1);
+        /*PlayerPrefs.SetInt("Char2lock", 1);
         PlayerPrefs.SetInt("Char3lock", 1);
         PlayerPrefs.SetInt("Char4lock", 1);
-        PlayerPrefs.SetInt("Char5lock", 1);
+        PlayerPrefs.SetInt("Char5lock", 1);*/
 
 
     }
