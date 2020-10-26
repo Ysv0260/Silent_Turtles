@@ -76,12 +76,6 @@ namespace PedometerU.Tests
         }
 
         private void OnDisable () {
-            // look at main game the saving of data is kinda causing he multiplcation of data here
-            // you are saving it mutiple time each step maybe ?
-
-            PlayerPrefs.SetInt("StepsToday", PlayerPrefs.GetInt("Steps", 0));
-            PlayerPrefs.SetInt("StepsThisMonth", PlayerPrefs.GetInt("Steps", 0));
-
             // Release the pedometer
             Pedometer.Dispose();
             Pedometer = null;

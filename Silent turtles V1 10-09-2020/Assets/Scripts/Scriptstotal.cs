@@ -31,6 +31,7 @@ public class Scriptstotal : MonoBehaviour
         Reward();
         Multi();
         AutoStep();
+        //if error then comment out the above 3 lines, reset steps in unity from dev button and then uncomment
     }
    
     //charater currency saving
