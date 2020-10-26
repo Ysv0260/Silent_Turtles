@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class InventoryActive : MonoBehaviour
 {
-
+    //Pets
     public GameObject ActiveGolem, ActiveBear, ActiveCat, ActiveWolf, ActiveFairy, ActiveMushroom;
     public GameObject PadlockGolem, PadlockBear, PadlockCat, PadlockWolf, PadlockMushroom;
+
+    //User
+   
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,7 @@ public class InventoryActive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Pets
         if (PlayerPrefs.GetInt("MushroomPadlock", 1) == 2)
         {
             PadlockMushroom.SetActive(false);
@@ -128,7 +132,10 @@ public class InventoryActive : MonoBehaviour
             ActiveBear.SetActive(false);
             ActiveGolem.SetActive(true);
         }
+        ///////////Pets
 
+        //User
+       
 
     }
 
@@ -192,4 +199,5 @@ public class InventoryActive : MonoBehaviour
         PlayerPrefs.SetInt("ActiveState", 1);
     }
 
+    
 }
