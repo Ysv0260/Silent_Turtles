@@ -523,7 +523,8 @@ MonoBehaviour:
   Arrow: {fileID: 0}
   RewardText: {fileID: 0}
   padlockItem: {fileID: 0}
-  Animation: {fileID: 0}
+  AutoStep: {fileID: 0}
+  StepsCurrency: {fileID: 0}
 --- !u!114 &237433567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,7 +595,8 @@ MonoBehaviour:
   Arrow: {fileID: 0}
   RewardText: {fileID: 0}
   padlockItem: {fileID: 0}
-  Animation: {fileID: 0}
+  AutoStep: {fileID: 0}
+  StepsCurrency: {fileID: 0}
 --- !u!1 &371494154
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Made by:   Adhay, Taea, Marcus, StJhon, Felix'
+  m_text: 'Made by:   Adhay, Taea, Marcus, StJohn, Felix'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8e446fa3ff2b8b48bbc866c1450d0a0, type: 2}
   m_sharedMaterial: {fileID: 21280864327797902, guid: d8e446fa3ff2b8b48bbc866c1450d0a0,
@@ -2394,7 +2396,8 @@ MonoBehaviour:
   Arrow: {fileID: 0}
   RewardText: {fileID: 0}
   padlockItem: {fileID: 0}
-  Animation: {fileID: 0}
+  AutoStep: {fileID: 0}
+  StepsCurrency: {fileID: 0}
 --- !u!1 &2087513823
 GameObject:
   m_ObjectHideFlags: 0
