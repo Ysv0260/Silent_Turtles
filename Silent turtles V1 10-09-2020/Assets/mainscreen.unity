@@ -1228,6 +1228,7 @@ MonoBehaviour:
   RewardText: {fileID: 805851771}
   padlockItem: {fileID: 0}
   AutoStep: {fileID: 798457023}
+  MultiStep: {fileID: 856165327}
   StepsCurrency: {fileID: 1165170987}
 --- !u!114 &632202247
 MonoBehaviour:
