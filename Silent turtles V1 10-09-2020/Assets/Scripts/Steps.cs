@@ -39,10 +39,10 @@ namespace PedometerU.Tests
             Chechdate();
 
             //This is the math outputs the steps to the game 
-            int textout = PlayerPrefs.GetInt("StepsCurrency", 0) + steps;
+            int textout = PlayerPrefs.GetInt("StepsCurrency", 0) + (steps * PlayerPrefs.GetInt("Multi", 1));
             Mainsteps.text = textout + "";
-            PlayerPrefs.SetInt("StepsForCurrency", steps);
-
+            PlayerPrefs.SetInt("StepsForCurrency", steps * PlayerPrefs.GetInt("Multi", 1));
+            PlayerPrefs.SetInt("StepsForTotal", steps);
             //Take the steps and place them within a player prefs
             int textoutv2 = PlayerPrefs.GetInt("StepsToday", 0) + steps;
             PlayerPrefs.SetInt("StepsD", textoutv2);
@@ -50,6 +50,7 @@ namespace PedometerU.Tests
             int textoutv3 = PlayerPrefs.GetInt("StepsThisMonth", 0) + steps;
             PlayerPrefs.SetInt("StepsM", textoutv3);
 
+           
 
             // Testing to make sure stats are working :-) 
             Debuging(steps);
