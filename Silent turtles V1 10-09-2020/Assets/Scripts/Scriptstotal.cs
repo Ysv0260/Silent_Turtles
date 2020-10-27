@@ -13,6 +13,7 @@ public class Scriptstotal : MonoBehaviour
     public TextMeshProUGUI RewardText;
     public Image padlockItem;
     public TextMeshProUGUI AutoStep;
+    public TextMeshProUGUI MultiStep;
     public TextMeshProUGUI StepsCurrency;
 
     private string SecCompare;
@@ -34,10 +35,39 @@ public class Scriptstotal : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "mainscreen")
         {
             Reward();
-            PetAuto();
+            Multi(PlayerPrefs.GetInt("SetCharacter",1));
+            PetAuto(PlayerPrefs.GetInt("SetPet", 1));
         }
 
     }
+
+    public void Multi(int charater)
+    {
+        switch (charater)
+        {
+            case 1:
+                MultiStep.text = "× 1";
+                PlayerPrefs.SetInt("Multi", 1);
+                return;
+            case 2:
+                MultiStep.text = "× 2";
+                PlayerPrefs.SetInt("Multi", 2);
+                return;
+            case 3:
+                MultiStep.text = "× 3";
+                PlayerPrefs.SetInt("Multi", 3);
+                return;
+            case 4:
+                MultiStep.text = "× 4";
+                PlayerPrefs.SetInt("Multi", 4);
+                return;
+            case 5:
+                MultiStep.text = "× 5";
+                PlayerPrefs.SetInt("Multi", 5);
+                return;
+        }
+    }
+
 
     public void PetAddStep(int num)
     {
@@ -50,9 +80,7 @@ public class Scriptstotal : MonoBehaviour
             Flag = true;
         }
     }
-
-
-    public void PetAuto()
+    public void PetAuto(int pet)
     {
         string Sec = System.DateTime.Now.ToString("ss");
         if (SecCompare != Sec)
@@ -64,7 +92,7 @@ public class Scriptstotal : MonoBehaviour
         Debug.Log("Sec:" + Sec);
         Debug.Log("Flag:" + Flag);
 
-        switch (PlayerPrefs.GetInt("SetPet", 1))
+        switch (pet)
         {
             case 1:
                 AutoStep.text = "0.0/Sec";
@@ -123,7 +151,7 @@ public class Scriptstotal : MonoBehaviour
     private void CharSave()
     {
         int currency = PlayerPrefs.GetInt("StepsCurrency", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
-        int total = PlayerPrefs.GetInt("StepsTotal", 0) + PlayerPrefs.GetInt("StepsForCurrency", 0);
+        int total = PlayerPrefs.GetInt("StepsTotal", 0) + PlayerPrefs.GetInt("StepsForTotal", 0);
         PlayerPrefs.SetInt("StepsCurrency", currency);
         PlayerPrefs.SetInt("StepsTotal", total);
     }
